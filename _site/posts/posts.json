@@ -2,24 +2,24 @@
   {
     "path": "posts/welcome/",
     "title": "Welcome to R Data Visualization",
-    "description": "Welcome to our new blog, R Data Visualization. We hope you enjoy \nreading what we have to say!",
+    "description": "Welcome to my new blog, R Data Visualization. I hope youe enjoy the code\nand visualizations!",
     "author": [
       {
-        "name": "Nora Jones",
-        "url": "https://example.com/norajones"
+        "name": "Ashwin Malshe",
+        "url": "www.ashwinmalshe.com"
       }
     ],
     "date": "2020-10-31",
     "categories": [],
-    "contents": "\n\n\n\n",
+    "contents": "\nMy main website is www.ashwinmalshe.com. However, due to some configurations issues, I am unable to update it. It has made it difficult for me to post new blog posts. Therefore, while I am porting my website to another project, I decided to start this blog. Here I am gradually making available all the old posts from my website. In addition, I will add new material.\n\n\n\n",
     "preview": {},
-    "last_modified": "2020-10-31T19:45:20-05:00",
-    "input_file": {}
+    "last_modified": "2020-10-31T20:14:15-05:00",
+    "input_file": "welcome.utf8.md"
   },
   {
     "path": "posts/2020-10-31-msda-faculty/",
     "title": "MSDA Faculty",
-    "description": "A short description of the post.",
+    "description": "A list of MSDA full-time faculty",
     "author": [
       {
         "name": "Ashwin Malshe",
@@ -30,7 +30,24 @@
     "categories": [],
     "contents": "\nWe don’t have an official listing for the faculty teaching in the MS in Data Analytics (MSDA) program at UTSA as we don’t have any professors permanently assigned to the program. However, there are a few professors, including me, who have been teaching regularly in MSDA. The following table lists these professors and the links to their profiles.\n\n\nCourse\n\n\nFaculty\n\n\nDA6213. Data-Driven Decision Making and Design\n\n\nYeonjoo Park\n\n\nDA6223. Data Analytics Tools and Techniques\n\n\nWenbo Wu\n\n\nDA6233. Data Analytics Visualization and Communication\n\n\nAshwin Malshe\n\n\nDA6813. Data Analytics Applications\n\n\nArka Roy\n\n\nAshwin Malshe\n\n\nDA6823. Data Analytics Practicum I\n\n\nMax Kilger\n\n\nDA6833. Data Analytics Practicum II\n\n\nMax Kilger\n\n\nIS6713. Data Foundations\n\n\nAnthony Rios\n\n\nIS6733. Deep Learning on Cloud Platforms\n\n\nPaul Rad\n\n\nSTA6443. Statistical Modeling\n\n\nYeonjoo Park\n\n\nSTA 6543. Predictive Modeling\n\n\nMin Wang\n\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2020-10-31T19:51:14-05:00",
+    "last_modified": "2020-10-31T20:14:54-05:00",
     "input_file": "msda-faculty.utf8.md"
+  },
+  {
+    "path": "posts/2020-10-31-plotting-covid-19-pandemic/",
+    "title": "Plotting Covid-19 Pandemic",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Ashwin Malshe",
+        "url": "www.ashwinmalshe.com"
+      }
+    ],
+    "date": "2020-03-08",
+    "categories": [],
+    "contents": "\nIn this post, we will visualize spread of worldwide COVID-19 cases through time. I obtained the data from Rami Krispin’s website: https://ramikrispin.github.io/coronavirus/ using coronovirus package. I also decided to do some experimentation using John Coene’s fantastic echarts4r package, which allows us to access echarts API.\nLoad the libraries and get the data in the R session.\n\n\nlibrary(dplyr)\nlibrary(echarts4r)\nlibrary(coronavirus)\n\n# Get the data\ndata(\"coronavirus\")\n\n\n\nData Preparation\nPrint out the first 6 observations.\n\n\nhead(coronavirus)\n\n\n        date province     country      lat     long      type cases\n1 2020-01-22          Afghanistan 33.93911 67.70995 confirmed     0\n2 2020-01-23          Afghanistan 33.93911 67.70995 confirmed     0\n3 2020-01-24          Afghanistan 33.93911 67.70995 confirmed     0\n4 2020-01-25          Afghanistan 33.93911 67.70995 confirmed     0\n5 2020-01-26          Afghanistan 33.93911 67.70995 confirmed     0\n6 2020-01-27          Afghanistan 33.93911 67.70995 confirmed     0\n\nWe are interested in date and type. Let’s take a look at the distinct values for type.\n\n\ncoronavirus %>% count(type)\n\n\n       type     n\n1 confirmed 75576\n2     death 75576\n3 recovered 71910\n\nThere are only 3 values: confirmed, death, and recovered. Next we will create sum of cases for each of the values and store them in separate data sets.\n\n\ndt1 <- coronavirus %>% \n  filter(type == \"confirmed\") %>% \n  group_by(date) %>% \n  summarize(Confirmed = sum(cases, na.rm = TRUE), .groups = \"drop\")\n\ndt2 <- coronavirus %>% \n  filter(type == \"death\") %>% \n  group_by(date) %>% \n  summarize(Death = sum(cases, na.rm = TRUE), .groups = \"drop\")\n\n\ndt3 <- coronavirus %>% \n  filter(type == \"recovered\") %>% \n  group_by(date) %>% \n  summarize(Recovered = sum(cases, na.rm = TRUE), .groups = \"drop\")\n\n\n\nFinally, we will merge the 3 datasets so that we will have the counts of each type in separate columns.\n\n\ndt <- dt1 %>% \n  inner_join(dt2, by = \"date\") %>% \n  inner_join(dt3, by = \"date\")\n\n\n\nPlot\nFinally, time to make the plot! Note how we can build this plot in separate elements.\n\n\ndt %>% \n  e_charts(x = date) %>% \n  e_line(serie = Confirmed) %>% \n  e_line(serie = Death) %>% \n  e_line(serie = Recovered) %>% \n  e_tooltip(trigger = \"axis\") %>% \n  e_datazoom(type = \"slider\") %>% \n  e_title(\"Worldwide COVID-19 cases\") %>% \n  e_theme(\"bee-insipired\") \n\n\npreserve41459f1a568b44ff\n\n\nThis plot is interactive so you can hover over the plot to get the exact readings. You can also toggle time series on or off by clicking on the legends on top.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2020-10-31T20:41:14-05:00",
+    "input_file": "plotting-covid-19-pandemic.utf8.md"
   }
 ]

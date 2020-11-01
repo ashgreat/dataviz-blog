@@ -1,7 +1,7 @@
 ---
 title: "MSDA Faculty"
 description: |
-  A short description of the post.
+  A list of MSDA full-time faculty
 author:
   - name: Ashwin Malshe
     url: www.ashwinmalshe.com
