@@ -16,7 +16,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-In this post, we will visualize spread of worldwide COVID-19 cases through time. I obtained the data from Rami Krispin's website: https://ramikrispin.github.io/coronavirus/ using `coronovirus` package. I also decided to do some experimentation using John Coene's fantastic [`echarts4r` package](https://echarts4r.john-coene.com/index.html), which allows us to access `echarts` API. 
+In this post, we will visualize spread of worldwide COVID-19 cases through time. I obtained the data from Rami Krispin's website: <https://ramikrispin.github.io/coronavirus/> using `coronovirus` package. I also decided to do some experimentation using John Coene's fantastic [`echarts4r` package](https://echarts4r.john-coene.com/index.html), which allows us to access `echarts` API. 
 
 
 Load the libraries and get the data in the R session.
