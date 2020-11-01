@@ -1501,12 +1501,13 @@ code span.wa { color: #545454; font-weight: bold; font-style: italic; } /* Warni
                        high <span class='op'>=</span> <span class='st'>"#ef2e69"</span>,
                        midpoint <span class='op'>=</span> <span class='fl'>50</span>,
                        labels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"0%"</span>, <span class='st'>"25%"</span>, <span class='st'>"50%"</span>, <span class='st'>"75%"</span>, <span class='st'>"100%"</span><span class='op'>)</span>,
-                       guide <span class='op'>=</span> <span class='fu'>guide_colourbar</span><span class='op'>(</span>barwidth <span class='op'>=</span> <span class='fl'>30</span>, 
+                       guide <span class='op'>=</span> <span class='fu'>guide_colorbar</span><span class='op'>(</span>barwidth <span class='op'>=</span> <span class='fl'>10</span>, 
                                               barheight <span class='op'>=</span> <span class='fl'>0.4</span>,
                                               title.position <span class='op'>=</span> <span class='st'>"top"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> 
-  <span class='fu'>labs</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"Probability of Trump Winning the State"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>labs</span><span class='op'>(</span>fill <span class='op'>=</span> <span class='st'>"Probability of Trump Winning a State"</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'>ggthemes</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/ggthemes/man/theme_map.html'>theme_map</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>theme</span><span class='op'>(</span>legend.position <span class='op'>=</span> <span class='st'>"bottom"</span>,
+  <span class='fu'>theme</span><span class='op'>(</span>legend.position <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.3</span>, <span class='op'>-</span><span class='fl'>0.2</span><span class='op'>)</span>,
+        legend.direction<span class='op'>=</span> <span class='st'>"horizontal"</span>,
         legend.title <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span>family <span class='op'>=</span> <span class='st'>"Roboto Condensed"</span><span class='op'>)</span><span class='op'>)</span> 
 </code></pre>
 </div>
