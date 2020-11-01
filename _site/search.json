@@ -3,17 +3,17 @@
     {
       "path": "about.html",
       "title": "About this blog",
-      "description": "Some additional details about the blog",
+      "description": "Keep on the lookout, folks!",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2020-10-31T19:45:24-05:00"
+      "last_modified": "2020-10-31T20:47:18-05:00"
     },
     {
       "path": "index.html",
       "title": "R Data Visualization",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2020-10-31T19:48:38-05:00"
+      "last_modified": "2020-10-31T20:41:14-05:00"
     }
   ],
   "collections": ["posts/posts.json"]
