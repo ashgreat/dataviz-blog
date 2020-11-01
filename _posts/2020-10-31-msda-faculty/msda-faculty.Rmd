@@ -1,0 +1,60 @@
+---
+title: "MSDA Faculty"
+description: |
+  A short description of the post.
+author:
+  - name: Ashwin Malshe
+    url: www.ashwinmalshe.com
+date: 10-31-2020
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+We don't have an official listing for the faculty teaching in the MS in Data Analytics (MSDA) program at UTSA as we don't have any professors permanently assigned to the program. However, there are a few professors, including me, who have been teaching regularly in MSDA. The following table lists these professors and the links to their profiles.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
+
+library(kableExtra)
+library(dplyr)
+
+data.frame(stringsAsFactors = FALSE,
+      Course = c("DA6213. Data-Driven Decision Making and Design",
+                 "DA6223. Data Analytics Tools and Techniques",
+                 "DA6233. Data Analytics Visualization and Communication",
+                 "DA6813. Data Analytics Applications", 
+                 "DA6813. Data Analytics Applications",
+                 "DA6823. Data Analytics Practicum I",
+                 "DA6833. Data Analytics Practicum II",
+                 "IS6713. Data Foundations", 
+                 "IS6733. Deep Learning on Cloud Platforms",
+                 "STA6443. Statistical Modeling", "STA 6543. Predictive Modeling"),
+     Faculty = c("[Yeonjoo Park](https://business.utsa.edu/faculty/yeonjoo-park-ph-d/)",
+                 "[Wenbo Wu](https://business.utsa.edu/faculty/wenbo-wu-ph-d/)",
+                 "[Ashwin Malshe](https://business.utsa.edu/faculty/ashwin-malshe/)",
+                 "[Arka Roy](https://business.utsa.edu/faculty/arkajyoti-roy-ph-d/)",
+                 "[Ashwin Malshe](https://business.utsa.edu/faculty/ashwin-malshe/)",
+                 "[Max Kilger](https://business.utsa.edu/faculty/max-kilger-2/)",
+                 "[Max Kilger](https://business.utsa.edu/faculty/max-kilger-2/)",
+                 "[Anthony Rios](https://business.utsa.edu/faculty/anthony-rios-ph-d/)",
+                 "[Paul Rad](https://business.utsa.edu/faculty/paul-rad/)",
+                 "[Yeonjoo Park](https://business.utsa.edu/faculty/yeonjoo-park-ph-d/)",
+                 "[Min Wang](https://business.utsa.edu/faculty/min-wang-ph-d/)")
+) %>% 
+  knitr::kable() %>% 
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover"),
+                            full_width = F) %>% 
+  collapse_rows(columns = 1, valign = "top")
+
+
+
+
+
+```
+
+
