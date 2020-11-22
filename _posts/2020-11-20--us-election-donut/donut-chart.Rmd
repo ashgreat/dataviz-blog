@@ -218,7 +218,9 @@ g3 <- dt2 %>%
   arrange(Candidate) %>% 
   mutate(ymax = cumsum(per_votes),
          ymin = ifelse(row_number() == 1, 0, lag(ymax)),
-         ypos = (ymin + ymax) / 2) %>% 
+         ypos = (ymin + ymax) / 2,
+                  ypos = ifelse(state == "District of Columbia" & Candidate == "Trump",
+                       0.05, ypos)) %>% 
   ungroup() %>% 
   ggplot(aes(ymin = ymin, ymax = ymax, xmin = 3, xmax = 4, fill = Candidate)) +
   geom_rect() +
