@@ -2,6 +2,7 @@ name: "dataviz-blog"
 title: "R Data Visualization"
 description: |
   R Data Visualization
+base_url: https://dataviz.school
 output_dir: "_site"
 navbar:
   right:
@@ -12,3 +13,7 @@ navbar:
     - icon: fa fa-rss
       href: index.xml
 output: distill::distill_article
+collections:
+  posts:
+    share: [twitter, linkedin]
+

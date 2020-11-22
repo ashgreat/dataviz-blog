@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
+  <url>
+    <loc>https://dataviz.school/about.html</loc>
+    <lastmod>2020-10-31T20:44:05-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://dataviz.school/</loc>
+    <lastmod>2020-10-31T19:45:18-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://dataviz.school/posts/2020-11-20--us-election-donut/</loc>
+    <lastmod>2020-11-21T21:57:45-06:00</lastmod>
+  </url>
+  <url>
+    <loc>https://dataviz.school/posts/2020-10-31-msda-faculty/</loc>
+    <lastmod>2020-10-31T20:14:54-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://dataviz.school/posts/2020-10-31-plotting-election-win-probabilities/</loc>
+    <lastmod>2020-11-01T14:40:24-06:00</lastmod>
+  </url>
+  <url>
+    <loc>https://dataviz.school/posts/welcome/</loc>
+    <lastmod>2020-10-31T23:07:24-05:00</lastmod>
+  </url>
+  <url>
+    <loc>https://dataviz.school/posts/2020-10-31-plotting-covid-19-pandemic/</loc>
+    <lastmod>2020-10-31T23:04:43-05:00</lastmod>
+  </url>
+</urlset>
