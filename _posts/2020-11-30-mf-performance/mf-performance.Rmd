@@ -27,7 +27,7 @@ Mark Carhart's classic 1997 Journal of Finance paper is highly cited for the mom
 Download Carhart's article [here](https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1540-6261.1997.tb03808.x). 
 </aside>
 
-I read this article for the first time in spring 2007 while taking a class in Corporate Finance Research at SUNY-Binghamton taught by [Srini Krishnamurthy](https://poole.ncsu.edu/people/skrish16/). Although this article is heavily cited for introducing the momentum factor, the topic of the article is way more interesting. In a nutshell, the article shows that mutual fund managers may not be as skilled as commonly believed, and their performance can be explained away mostly by momentum trading strategies. Furthermore, there is no persistence in mutual fund performance. This means that if you decide to invest in a fund based on the last year's returns, the chances are slim that the performance of the fund will persist in future!
+I read this article for the first time in spring 2007 while taking a class on Capital Markets Research at SUNY-Binghamton taught by [Srini Krishnamurthy](https://poole.ncsu.edu/people/skrish16/). Although this article is heavily cited for introducing the momentum factor, the topic of the article is way more interesting. In a nutshell, the article shows that mutual fund managers may not be as skilled as commonly believed, and their performance can be explained away mostly by momentum trading strategies. Furthermore, there is no persistence in mutual fund performance. This means that if you decide to invest in a fund based on the last year's returns, the chances are slim that the performance of the fund will persist in future!
 
 Although over the years I may have forgotten some of the details, Figure 1 from this paper is etched in my memory. From a purely data visualization perspective, it is a terrible plot. A 3-dimensional plot on 2-dimensional paper is no go. This is a static plot which means it lacks interactivity. Finally, this plot was printed in black and white! Yet, this is an amazing plot. I reproduce it here and explain why this is so insightful.
 
@@ -84,7 +84,7 @@ In this heatmap, things look a bit more interesting. We can see that the primary
 
 ## 3-Dimensional Bar Plot using `echarts4r`
 
-I wanted to more closely replicate Carhart's visualization. I decided to use `echarts4r` to recreate this plot because this package has an easy way to create 3-d plots. However, it has a few limitations as well. R package has only a few functionalities of the original `echarts` library. I am not proficient in JavaScript so I can't make finer changes to the plot. Let's give it a shot.
+I wanted to more closely replicate Carhart's visualization. I decided to use `echarts4r` to recreate this plot because this package has an easy way to create 3-d plots. However, it has a few limitations as well. R package has only a few functionalities of the original `echarts` library. I am not proficient in JavaScript so I can't make finer changes to the plot. Let's give it a shot. Note that the X axis has the deciles in year t, Y axis has the deciles in year t+1, and the Z axis has the probabilities.
 
 ```{r warning=FALSE, message=FALSE}
 
@@ -106,13 +106,16 @@ mf_dt %>%
 ```
 
 
-This plot is not bad at all! It has a lot of details and we can rotate the plot to get an understanding of the tranistion probabilities. Ideally I would have loved to assign the same color to the columns belonging to a decile in year t but I found it difficult to achieve. I will keep exploring this.
+This plot is not bad at all! It has a lot of details and we can rotate the plot to get an understanding of the tranistion probabilities. Ideally I would have loved to assign the same color to the columns belonging to a decile in year t+1 but I found it difficult to achieve. I will keep exploring this.
 
 ## 3-Dimensional `highcharter` Bar Plot
 
 As an alternative I decided to use `highcharter` library which is a wrapper for `highcharts`. However, there is no easy way to rotate the plot. So I am going to show you two plots - one without rotation and the other with. The one with rotation is actually hosted on Shinyapps.io as a Shiny app.
 
+Note that in both the plots, the same color is applied to the bars for the decile in year t+1. This is shown in the legend at the bottom of the plots.
+
 ### Static `highcharter` plot
+
 
 
 ```{r}
@@ -176,9 +179,11 @@ hc
 
 With `highcharter`, I could assign distinct colors to the deciles. This makes it easier compared to `echarts4r` to explore transition probabilities. However, we can't rotate this plot.
 
+How to read this plot? The front row of columns belong to Decile 1 from year t+1. From left to right, we can see the Decile 1 to Decile 10 from year t. Thus, the left most column is the probability that a fund will stay in Decile 1 the next year. The second column from left is the probability that a fund will move from Decile 1 in year t to Decile 2 in year t+1. The second row of columns belongs to Decile 2 from year t+1 and so on.
+
 ## Draggable `highcharter` bar plot
 
-I decided to host my plot on Shinyapps.io as a Shiny app, which made it possible to drag or rotate the bar plot. Now you are free to play with it!
+I decided to host my plot on Shinyapps.io as a Shiny app, which made it possible to drag or rotate the bar plot. Now you are free to play with it! The way to read the plot is the same as the static plot.
 
 
 ```{r}
