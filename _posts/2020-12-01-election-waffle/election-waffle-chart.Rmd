@@ -1,0 +1,112 @@
+---
+title: "Untitled"
+description: |
+  In this blog post, I will create geofacets of waffle charts.
+author:
+  - name: Ashwin Malshe
+    url: www.ashwinmalshe.com
+date: "2020-11-22"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r echo=FALSE}
+# I saved the above data set as election-2020-21.rds
+dt <- readRDS(here::here("election-2020-11-21.rds"))
+```
+
+
+```{r}
+
+# Load the libraries
+pacman::p_load(tidyverse, showtext, geofacet, waffle)
+
+dt2 <- dt %>% 
+  mutate(
+         Others = votes  - (results_trumpd + results_bidenj),
+         Others_ab = absentee_votes - (results_absentee_trumpd + results_absentee_trumpd),
+         state = stringr::str_replace_all(state, "-", " "),
+         state = stringr::str_to_title(state),
+         state = ifelse(state == "District Of Columbia", "District of Columbia",  state)
+         ) %>% 
+  group_by(state) %>% 
+  summarize(Trump_votes = sum(results_trumpd, na.rm = TRUE),
+            Trump_abvotes = sum(results_absentee_trumpd, na.rm = TRUE),
+            Biden_votes = sum(results_bidenj, na.rm = TRUE),
+            Biden_abvotes = sum(results_absentee_bidenj, na.rm = TRUE),
+            Others_votes = sum(Others , na.rm = TRUE),
+            Others_abvotes = sum(Others_ab , na.rm = TRUE),
+            .groups = "drop") %>% 
+  pivot_longer(cols = c(Trump_votes, Biden_votes, Others_votes,
+                        Trump_abvotes, Biden_abvotes, Others_abvotes),
+               names_to = c("Candidate", ".value"),
+               names_pattern = "(.+)_(.+)") %>% 
+  group_by(state) %>% 
+    mutate(per_votes = votes / sum(votes)) %>% 
+  ungroup()
+  
+```
+
+
+
+```{r}
+font_add("proxima", here::here("Icons", "ProximaNovaCond-Regular.otf"))
+showtext_auto()
+```
+
+
+
+```{r}
+
+library(waffle)
+dt2 %>% 
+  # filter(state %in% c("Texas", "Florida", "New York", "California") & Candidate %in% c("Biden", "Trump")) %>% 
+  filter(Candidate %in% c("Biden", "Trump")) %>% 
+  ggplot(aes(fill = Candidate, values = 50 * per_votes)) +
+  geom_waffle(n_rows = 5, size = 0.33, colour = "white", radius = unit(0.05, "cm")) +
+  scale_fill_manual(values = c("#004ba8", "#d91e36")) +
+  coord_equal() +
+  theme_void() +
+  facet_geo(~state) +
+  # facet_wrap(~state) +
+  #hrbrthemes::theme_ipsum_rc(grid="") +
+  # theme_enhance_waffle() +
+  theme(legend.position = "none",
+        strip.text = element_text(family = "proxima"))
+  
+```
+
+
+
+
+```{r layout="l-body-outset", fig.width=11, fig.height=8.5}
+g1 <- dt2 %>% 
+  group_by(state) %>% 
+  arrange(Candidate) %>% 
+  ungroup() %>% 
+  ggplot(aes(x = 1.4, y = per_votes, fill = Candidate)) +
+  geom_col(color = "white", width = 0.7) +
+  coord_polar(theta = "y", start = 0) +
+  facet_geo(~state) +
+  scale_fill_manual(values = c("#0066f2", "#e9c41d", "#ff0000")) +
+  theme_void()+
+  xlim(0, 2) +
+  labs(caption = "Ashwin Malshe \nhttps://dataviz.school",
+       subtitle = " ") +
+  theme(legend.text = element_text(family = "proxima", size = 10),
+        legend.title = element_blank(),
+        legend.direction = "horizontal",
+        legend.position = c(0.2, 1),
+        plot.caption = element_text(family = "proxima", size = 10, hjust = 0.95,
+                                    margin = margin(0, 0, 5, 0, "pt"),
+                                    face = "bold", color = "#1500f4"),
+        strip.text = element_text(family = "proxima", size = 9,
+                                  margin = margin(0, 0, 5, 0, "pt"))) 
+
+# Print the plot
+g1
+
+```

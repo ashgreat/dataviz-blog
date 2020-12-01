@@ -7,7 +7,16 @@
     <description>R Data Visualization
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 19 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Persistence in Mutual Fund Performance</title>
+      <dc:creator>Ashwin Malshe</dc:creator>
+      <link>https://dataviz.school/posts/2020-11-30-mf-performance</link>
+      <description>In this article, I reproduce Figure 1 from Mark Carhart's classic 1997 Journal of Finance article titled "On Persistence in Mutual Fund Performance". The visualizations are created using highcharter and echarts4r packages. It is an interactive bar plot that shows that there is a very low persistence in the mutual fund performance.</description>
+      <guid>https://dataviz.school/posts/2020-11-30-mf-performance</guid>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://dataviz.school/posts/2020-11-30-mf-performance/distill-preview.png" medium="image" type="image/png" width="1570" height="1274"/>
+    </item>
     <item>
       <title>Donut Chart and Geofacets</title>
       <dc:creator>Ashwin Malshe</dc:creator>
