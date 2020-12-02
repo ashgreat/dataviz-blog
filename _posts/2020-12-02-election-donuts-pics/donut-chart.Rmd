@@ -28,7 +28,7 @@ As of the date of this writing (21st November 2020), the results of the US Presi
 
 ## Final plot
 
-This is the plot I created. I got Trump and Biden icons from here respectively:
+This is the plot I created. I have used Biden and Trump pictures from www.pixabay.com. Check it out for a lot of free, attribution-free images. I also tried using Trump and Biden icons but it did not work well. I got Trump and Biden icons from here respectively:
 
 [Trump icon](https://icons8.com/icons/set/donald-trump)
 [Biden icon](https://icons8.com/icons/set/joe-biden)
@@ -91,7 +91,7 @@ dt3 <- dt2 %>%
   mutate(image = case_when(Candidate == "Biden" ~ "https://github.com/ashgreat/dataviz-blog/raw/main/Images/joe-biden.png",
                            Candidate == "Trump" ~ "https://github.com/ashgreat/dataviz-blog/raw/main/Images/donald-trump.png"),
          image2 = case_when(Candidate == "Biden" ~ "https://github.com/ashgreat/dataviz-blog/raw/main/Images/biden-small-pixabay.png",
-                           Candidate == "Trump" ~ "https://github.com/ashgreat/dataviz-blog/raw/main/Images/trump-small-pixabay%20copy.png")
+                           Candidate == "Trump" ~ "https://github.com/ashgreat/dataviz-blog/raw/main/Images/trump-small-pixabay.png")
          )
 ```
 
@@ -131,8 +131,11 @@ g3 <- dt2 %>%
         strip.text = element_text(family = "proxima", size = 9, color = "white",
                                   margin = margin(0, 0, 5, 0, "pt")),
         strip.background = element_blank(),
-        plot.background = element_rect(fill = "#2e3440", color = NA),
-        panel.background = element_rect(fill = "#2e3440", color = NA))
+                panel.background = element_blank(),
+        plot.background = element_blank())
+# 
+#         plot.background = element_rect(fill = "#2e3440", color = NA),
+#         panel.background = element_rect(fill = "#2e3440", color = NA))
 
 
 
@@ -143,7 +146,7 @@ g3 <- dt2 %>%
 ```{r}
 g4 <- ggplot(dt3) +
   facet_geo(~state) +
-  ggimage::geom_image(aes(x = 0.5, y = -1, image = image), size = 0.5) +
+  ggimage::geom_image(aes(x = 0.5, y = -1, image = image2), size = 0.4) +
   theme_void()+
   xlim(0, 1) +
   coord_fixed() +
@@ -154,10 +157,9 @@ g4 <- ggplot(dt3) +
                                     face = "bold", color = "#a3be8c"),
         strip.background = element_blank(),
         strip.text = element_blank(),
-        panel.background = element_blank(),
-        plot.background = element_blank()
-        )
-
+        plot.background = element_rect(fill = "#2e3440", color = NA),
+        panel.background = element_rect(fill = "#2e3440", color = NA))
+        
 ```
 
 
@@ -165,14 +167,14 @@ g4 <- ggplot(dt3) +
 
 aligned_plots <- cowplot::align_plots(g3, g4, align="hv", greedy = FALSE)
 
-g5 <- ggdraw(aligned_plots[[1]]) +
-  draw_plot(aligned_plots[[2]])
+g5 <- ggdraw(aligned_plots[[2]]) +
+  draw_plot(aligned_plots[[1]])
 
 g5
 ```
 
 ```{r eval=FALSE}
-ggsave("state-donut4.png", plot = g5, dpi = 600, width = 11, height = 8.5)
+ggsave("state-donut4.png", plot = g5, dpi = 300, width = 11, height = 8.5)
 ```
 
 
@@ -181,12 +183,12 @@ ggsave("state-donut4.png", plot = g5, dpi = 600, width = 11, height = 8.5)
 Here is the code to recreate these plots. Note that I am assuming that you are using the code to prepare data from my [previous post](https://dataviz.school/posts/2020-11-20--us-election-donut/).
 
 
-The main challenge in creating this plot is mismatch of the coordinate system. The donuts are created using polar coordinates. It's not possible to overlay images on top of those donuts in `ggplot2`. I decided to use a workaround, which I have successfully used in the past to create dataviz for my wife. I first created two separate plots. First plot is the main donut chart which I created previously. The second plot is just a facet plot of Biden and Trump images. Next I used `cowplot` package to overlay these two plots on top of each other. It may sound pretty easy but it took me a lot of time to align those two plots perfectly. The key was to use `ccord_fixed` in the second plot.
+The main challenge in creating this plot is mismatch of the coordinate system. The donuts are created using polar coordinates. It's not possible to overlay images on top of those donuts in `ggplot2`. I decided to use a workaround, which I have successfully used in the past to create dataviz for my wife. I first created two separate plots. First plot is the main donut chart which I created previously. The second plot is just a facet plot of Biden and Trump images. Next I used `cowplot` package to overlay these two plots on top of each other. It may sound pretty easy but it took me a lot of time to align those two plots perfectly. The key was to use `coord_fixed()` in the second plot.
 
 
 ### Create a data set with images
 
-Here I am creating a data set with a column containing links to either Biden or Trump images. I am also making sure that I retain the winner in each state and DC. The resulting data has 51 rows.
+Here I am creating a data set with a column containing links to either Biden or Trump images. I am also making sure that I retain the winner in each state and DC. The resulting data has 51 rows. Note that in the plot I use `image2` variable to overlay images. If you instead want the icons, use `image` in `geom_image()` in the code below.
 
 ```{r echo=TRUE, eval=FALSE}
 dt3 <- dt2 %>%
@@ -196,8 +198,8 @@ dt3 <- dt2 %>%
   ungroup() %>% 
   mutate(image = case_when(Candidate == "Biden" ~ "https://github.com/ashgreat/dataviz-blog/raw/main/Images/joe-biden.png",
                            Candidate == "Trump" ~ "https://github.com/ashgreat/dataviz-blog/raw/main/Images/donald-trump.png"),
-         image2 = case_when(Candidate == "Biden" ~ "https://github.com/ashgreat/dataviz-blog/raw/main/Images/iconbiden.jpg",
-                           Candidate == "Trump" ~ "https://github.com/ashgreat/dataviz-blog/raw/main/Images/icontrump.jpg")
+         image2 = case_when(Candidate == "Biden" ~ "https://github.com/ashgreat/dataviz-blog/raw/main/Images/biden-small-pixabay.png",
+                           Candidate == "Trump" ~ "https://github.com/ashgreat/dataviz-blog/raw/main/Images/trump-small-pixabay.png")
          )
 ```
 
