@@ -7,7 +7,16 @@
     <description>R Data Visualization
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 01 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Donut Chart and Geofacets with Images</title>
+      <dc:creator>Ashwin Malshe</dc:creator>
+      <link>https://dataviz.school/posts/2020-12-02-election-donuts-pics</link>
+      <description>In this post, I recreate the donut chart overlaid on geo facets. Based on a friend's feedback, I now add pictures of winners of each state.</description>
+      <guid>https://dataviz.school/posts/2020-12-02-election-donuts-pics</guid>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://dataviz.school/posts/2020-12-02-election-donuts-pics/distill-preview.png" medium="image" type="image/png" width="2112" height="1632"/>
+    </item>
     <item>
       <title>Persistence in Mutual Fund Performance</title>
       <dc:creator>Ashwin Malshe</dc:creator>
@@ -25,15 +34,6 @@
       <guid>https://dataviz.school/posts/2020-11-20--us-election-donut</guid>
       <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
       <media:content url="https://dataviz.school/posts/2020-11-20--us-election-donut/distill-preview.png" medium="image" type="image/png" width="2112" height="1632"/>
-    </item>
-    <item>
-      <title>Donut Chart and Geofacets</title>
-      <dc:creator>Ashwin Malshe</dc:creator>
-      <link>https://dataviz.school/posts/2020-12-02-election-donuts-pics</link>
-      <description>In this post, I recreate the donut chart overlaid on geo facets. Based on a friend's feedback, I now add pictures of winners of each state.</description>
-      <guid>https://dataviz.school/posts/2020-12-02-election-donuts-pics</guid>
-      <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
-      <media:content url="https://dataviz.school/posts/2020-12-02-election-donuts-pics/distill-preview.png" medium="image" type="image/png" width="2112" height="1632"/>
     </item>
     <item>
       <title>MSDA Faculty</title>

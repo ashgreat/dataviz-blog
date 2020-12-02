@@ -1,11 +1,11 @@
 ---
-title: "Donut Chart and Geofacets"
+title: "Donut Chart and Geofacets with Images"
 description: |
   In this post, I recreate the donut chart overlaid on geo facets. Based on a friend's feedback, I now add pictures of winners of each state.
 author:
   - name: Ashwin Malshe
     url: www.ashwinmalshe.com
-date: "2020-11-19"
+date: "2020-12-02"
 output: distill::distill_article
 ---
 
