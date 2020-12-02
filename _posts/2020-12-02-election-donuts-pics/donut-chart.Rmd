@@ -90,8 +90,8 @@ dt3 <- dt2 %>%
   ungroup() %>% 
   mutate(image = case_when(Candidate == "Biden" ~ "https://github.com/ashgreat/dataviz-blog/raw/main/Images/joe-biden.png",
                            Candidate == "Trump" ~ "https://github.com/ashgreat/dataviz-blog/raw/main/Images/donald-trump.png"),
-         image2 = case_when(Candidate == "Biden" ~ "https://github.com/ashgreat/dataviz-blog/raw/main/Images/iconbiden.jpg",
-                           Candidate == "Trump" ~ "https://github.com/ashgreat/dataviz-blog/raw/main/Images/icontrump.jpg")
+         image2 = case_when(Candidate == "Biden" ~ "https://github.com/ashgreat/dataviz-blog/raw/main/Images/biden-small-pixabay.png",
+                           Candidate == "Trump" ~ "https://github.com/ashgreat/dataviz-blog/raw/main/Images/trump-small-pixabay%20copy.png")
          )
 ```
 
