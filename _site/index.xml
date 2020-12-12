@@ -7,7 +7,16 @@
     <description>R Data Visualization
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 02 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 12 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Easy pie charts and donut charts with ggforce</title>
+      <dc:creator>Ashwin Malshe</dc:creator>
+      <link>https://dataviz.school/posts/2020-12-12-ggorce</link>
+      <description>I make pie charts and donut charts in ggplot2 using a combination of a bar plot and polar coordinates. This works fine but polar coordinates prevent using any other geoms or annotations that need Cartesian coordinates. For example, annoatation_raster doesn't work with polar coordinates. ggforce solves this issue.</description>
+      <guid>https://dataviz.school/posts/2020-12-12-ggorce</guid>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://dataviz.school/posts/2020-12-12-ggorce/distill-preview.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>Donut Chart and Geofacets with Images</title>
       <dc:creator>Ashwin Malshe</dc:creator>
