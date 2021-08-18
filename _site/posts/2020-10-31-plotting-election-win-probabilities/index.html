@@ -89,6 +89,8 @@ code span.wa { color: #545454; font-weight: bold; font-style: italic; } /* Warni
 
 <meta property="description" itemprop="description" content="I show how to create a election map using ggplot2"/>
 
+<link rel="canonical" href="https://dataviz.school/posts/2020-10-31-plotting-election-win-probabilities/"/>
+<link rel="icon" type="image/vnd.microsoft.icon" href="../../Images/favicon.ico"/>
 
 <!--  https://schema.org/Article -->
 <meta property="article:published" itemprop="datePublished" content="2020-10-31"/>
@@ -99,19 +101,33 @@ code span.wa { color: #545454; font-weight: bold; font-style: italic; } /* Warni
 <meta property="og:title" content="R Data Visualization: Mapping Election Win Probabilities"/>
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="I show how to create a election map using ggplot2"/>
+<meta property="og:url" content="https://dataviz.school/posts/2020-10-31-plotting-election-win-probabilities/"/>
+<meta property="og:image" content="https://dataviz.school/posts/2020-10-31-plotting-election-win-probabilities/plotting-election-win-probabilities_files/figure-html5/unnamed-chunk-4-1.png"/>
+<meta property="og:image:width" content="1152"/>
+<meta property="og:image:height" content="1152"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="R Data Visualization"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
-<meta property="twitter:card" content="summary"/>
+<meta property="twitter:card" content="summary_large_image"/>
 <meta property="twitter:title" content="R Data Visualization: Mapping Election Win Probabilities"/>
 <meta property="twitter:description" content="I show how to create a election map using ggplot2"/>
+<meta property="twitter:url" content="https://dataviz.school/posts/2020-10-31-plotting-election-win-probabilities/"/>
+<meta property="twitter:image" content="https://dataviz.school/posts/2020-10-31-plotting-election-win-probabilities/plotting-election-win-probabilities_files/figure-html5/unnamed-chunk-4-1.png"/>
+<meta property="twitter:image:width" content="1152"/>
+<meta property="twitter:image:height" content="1152"/>
 
+<!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
+<meta name="citation_title" content="R Data Visualization: Mapping Election Win Probabilities"/>
+<meta name="citation_fulltext_html_url" content="https://dataviz.school/posts/2020-10-31-plotting-election-win-probabilities/"/>
+<meta name="citation_online_date" content="2020/10/31"/>
+<meta name="citation_publication_date" content="2020/10/31"/>
+<meta name="citation_author" content="Ashwin Malshe"/>
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Mapping Election Win Probabilities"]},{"type":"character","attributes":{},"value":["I show how to create a election map using ggplot2"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Ashwin Malshe"]},{"type":"character","attributes":{},"value":["www.ashwinmalshe.com"]}]}]},{"type":"character","attributes":{},"value":["10-31-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Mapping Election Win Probabilities"]},{"type":"character","attributes":{},"value":["I show how to create a election map using ggplot2"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Ashwin Malshe"]},{"type":"character","attributes":{},"value":["www.ashwinmalshe.com"]}]}]},{"type":"character","attributes":{},"value":["10-31-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://dataviz.school/posts/2020-10-31-plotting-election-win-probabilities/"]},{"type":"character","attributes":{},"value":["https://dataviz.school/posts/2020-10-31-plotting-election-win-probabilities/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -131,6 +147,7 @@ code span.wa { color: #545454; font-weight: bold; font-style: italic; } /* Warni
     var header = $('header').get(0);
     var headerHeight = header.offsetHeight;
     var headroom = new Headroom(header, {
+      tolerance: 5,
       onPin : function() {
         if (window.headroom_prevent_pin) {
           window.headroom_prevent_pin = false;
@@ -453,8 +470,15 @@ d-title {
   top: 0;
 }
 
+/* adjust viewport for navbar height */
+/* helps vertically center bootstrap (non-distill) content */
+.min-vh-100 {
+  min-height: calc(100vh - 100px) !important;
+}
+
 </style>
 
+<script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
 <link href="../../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
 <link href="../../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
 <script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -562,19 +586,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
           var results = fuse.search(query, searchOptions);
           callback(results
             .map(function(result) { return result.item; })
-            .filter(function(item) { return !!item.description; })
           );
         },
         templates: {
           suggestion: function(suggestion) {
+            var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+              ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+              : '';
             var html = `
               <div class="search-item">
                 <h3>${suggestion.title}</h3>
                 <div class="search-item-description">
-                  ${suggestion.description}
+                  ${suggestion.description || ''}
                 </div>
                 <div class="search-item-preview">
-                  <img src="${suggestion.preview ? offsetURL(suggestion.preview) : ''}"</img>
+                  ${img}
                 </div>
               </div>
             `;
@@ -597,6 +623,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 
 <style type="text/css">
+
+.nav-search {
+  font-size: x-small;
+}
 
 /* Algolioa Autocomplete */
 
@@ -672,6 +702,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 }
 
 .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+  font-size: 1rem;
   margin-block-start: 0;
   margin-block-end: 5px;
 }
@@ -899,6 +930,11 @@ d-article pre a:hover {
   text-decoration: underline;
 }
 
+d-article details {
+  grid-column: text;
+  margin-bottom: 0.8em;
+}
+
 @media(min-width: 768px) {
 
 d-article pre,
@@ -1053,6 +1089,17 @@ d-article .citation {
 
 div.hanging-indent{
   margin-left: 1em; text-indent: -1em;
+}
+
+/* Citation hover box */
+
+.tippy-box[data-theme~=light-border] {
+  background-color: rgba(250, 250, 250, 0.95);
+}
+
+.tippy-content > p {
+  margin-bottom: 0;
+  padding: 2px;
 }
 
 
@@ -1720,7 +1767,7 @@ function init_distill() {
     var layout = $(this).attr('data-layout');
 
     // apply layout to markdown level block elements
-    var elements = $(this).children().not('div.sourceCode, pre, script');
+    var elements = $(this).children().not('details, div.sourceCode, pre, script');
     elements.each(function(i, el) {
       var layout_div = $('<div class="' + layout + '"></div>');
       if (layout_div.hasClass('shaded')) {
@@ -1835,6 +1882,20 @@ function init_distill() {
     // move appendix-bottom entries to the bottom
     $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
     $('.appendix-bottom').remove();
+
+    // hoverable references
+    $('span.citation[data-cites]').each(function() {
+      var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+      window.tippy(this, {
+        allowHTML: true,
+        content: refHtml,
+        maxWidth: 500,
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'light-border',
+        placement: 'bottom-start'
+      });
+    });
 
     // clear polling timer
     clearInterval(tid);
@@ -2012,7 +2073,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Mapping Election Win Probabilities","description":"I show how to create a election map using ggplot2","authors":[{"author":"Ashwin Malshe","authorURL":"www.ashwinmalshe.com","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2020-10-31T00:00:00.000-05:00","citationText":"Malshe, 2020"}
+{"title":"Mapping Election Win Probabilities","description":"I show how to create a election map using ggplot2","authors":[{"author":"Ashwin Malshe","authorURL":"www.ashwinmalshe.com","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2020-10-31T00:00:00.000+00:00","citationText":"Malshe, 2020"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2129,6 +2190,19 @@ document.addEventListener('DOMContentLoaded', function() {
 </ol>
 </section>
 <!--radix_placeholder_article_footer-->
+<div class="article-footer">
+  <p class="social_footer">
+    <span class="article-sharing">
+      Share: &nbsp;
+      <a href="https://twitter.com/share?text=Mapping%20Election%20Win%20Probabilities&amp;url=https%3A%2F%2Fdataviz.school%2Fposts%2F2020-10-31-plotting-election-win-probabilities%2F">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fdataviz.school%2Fposts%2F2020-10-31-plotting-election-win-probabilities%2F&amp;title=Mapping%20Election%20Win%20Probabilities">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </span>
+  </p>
+</div>
 <!--/radix_placeholder_article_footer-->
 </div>
 
@@ -2139,7 +2213,18 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
-<div class="appendix-bottom"></div>
+<div class="appendix-bottom">
+  <h3 id="citation">Citation</h3>
+  <p>For attribution, please cite this work as</p>
+  <pre class="citation-appendix short">Malshe (2020, Oct. 31). R Data Visualization: Mapping Election Win Probabilities. Retrieved from https://dataviz.school/posts/2020-10-31-plotting-election-win-probabilities/</pre>
+  <p>BibTeX citation</p>
+  <pre class="citation-appendix long">@misc{malshe2020mapping,
+  author = {Malshe, Ashwin},
+  title = {R Data Visualization: Mapping Election Win Probabilities},
+  url = {https://dataviz.school/posts/2020-10-31-plotting-election-win-probabilities/},
+  year = {2020}
+}</pre>
+</div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <!--/radix_placeholder_navigation_after_body-->

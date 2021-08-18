@@ -6,6 +6,11 @@
     <atom:link href="https://dataviz.school/index.xml" rel="self" type="application/rss+xml"/>
     <description>R Data Visualization
 </description>
+    <image>
+      <title>R Data Visualization</title>
+      <url>https://dataviz.school/Images/favicon.ico</url>
+      <link>https://dataviz.school</link>
+    </image>
     <generator>Distill</generator>
     <lastBuildDate>Wed, 18 Aug 2021 00:00:00 +0000</lastBuildDate>
     <item>
@@ -59,7 +64,7 @@
       <description>I show how to create a election map using ggplot2</description>
       <guid>https://dataviz.school/posts/2020-10-31-plotting-election-win-probabilities</guid>
       <pubDate>Sat, 31 Oct 2020 00:00:00 +0000</pubDate>
-      <media:content url="https://dataviz.school/posts/2020-10-31-plotting-election-win-probabilities/plotting-election-win-probabilities_files/figure-html5/unnamed-chunk-4-1.png" medium="image" type="image/png"/>
+      <media:content url="https://dataviz.school/posts/2020-10-31-plotting-election-win-probabilities/plotting-election-win-probabilities_files/figure-html5/unnamed-chunk-4-1.png" medium="image" type="image/png" width="1152" height="1152"/>
     </item>
     <item>
       <title>Welcome to R Data Visualization</title>
