@@ -7,7 +7,15 @@
     <description>R Data Visualization
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 12 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>MSDA Faculty</title>
+      <dc:creator>Ashwin Malshe</dc:creator>
+      <link>https://dataviz.school/posts/2020-10-31-msda-faculty</link>
+      <description>A list of MSDA full-time faculty</description>
+      <guid>https://dataviz.school/posts/2020-10-31-msda-faculty</guid>
+      <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Easy pie charts and donut charts with ggforce</title>
       <dc:creator>Ashwin Malshe</dc:creator>
@@ -43,14 +51,6 @@
       <guid>https://dataviz.school/posts/2020-11-20--us-election-donut</guid>
       <pubDate>Thu, 19 Nov 2020 00:00:00 +0000</pubDate>
       <media:content url="https://dataviz.school/posts/2020-11-20--us-election-donut/distill-preview.png" medium="image" type="image/png" width="2112" height="1632"/>
-    </item>
-    <item>
-      <title>MSDA Faculty</title>
-      <dc:creator>Ashwin Malshe</dc:creator>
-      <link>https://dataviz.school/posts/2020-10-31-msda-faculty</link>
-      <description>A list of MSDA full-time faculty</description>
-      <guid>https://dataviz.school/posts/2020-10-31-msda-faculty</guid>
-      <pubDate>Sat, 31 Oct 2020 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Mapping Election Win Probabilities</title>

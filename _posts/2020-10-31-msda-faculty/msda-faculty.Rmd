@@ -5,7 +5,7 @@ description: |
 author:
   - name: Ashwin Malshe
     url: www.ashwinmalshe.com
-date: 10-31-2020
+date: 08-18-2021
 output:
   distill::distill_article:
     self_contained: false
@@ -26,23 +26,28 @@ library(dplyr)
 data.frame(stringsAsFactors = FALSE,
       Course = c("DA6213. Data-Driven Decision Making and Design",
                  "DA6223. Data Analytics Tools and Techniques",
+                 "DA6223. Data Analytics Tools and Techniques",
                  "DA6233. Data Analytics Visualization and Communication",
                  "DA6813. Data Analytics Applications", 
                  "DA6813. Data Analytics Applications",
                  "DA6823. Data Analytics Practicum I",
                  "DA6833. Data Analytics Practicum II",
+                 "DA6833. Data Analytics Practicum II",
                  "IS6713. Data Foundations", 
                  "IS6733. Deep Learning on Cloud Platforms",
-                 "STA6443. Statistical Modeling", "STA 6543. Predictive Modeling"),
+                 "STA6443. Statistical Modeling", 
+                 "STA 6543. Predictive Modeling"),
      Faculty = c("[Yeonjoo Park](https://business.utsa.edu/faculty/yeonjoo-park-ph-d/)",
                  "[Wenbo Wu](https://business.utsa.edu/faculty/wenbo-wu-ph-d/)",
+                 "[Isil Koyuncu](https://business.utsa.edu/faculty/isil-koyuncu-ph-d/)",
                  "[Ashwin Malshe](https://business.utsa.edu/faculty/ashwin-malshe/)",
                  "[Arka Roy](https://business.utsa.edu/faculty/arkajyoti-roy-ph-d/)",
                  "[Ashwin Malshe](https://business.utsa.edu/faculty/ashwin-malshe/)",
                  "[Max Kilger](https://business.utsa.edu/faculty/max-kilger-2/)",
                  "[Max Kilger](https://business.utsa.edu/faculty/max-kilger-2/)",
+                 "[Ashwin Malshe](https://business.utsa.edu/faculty/ashwin-malshe/)",
                  "[Anthony Rios](https://business.utsa.edu/faculty/anthony-rios-ph-d/)",
-                 "[Paul Rad](https://business.utsa.edu/faculty/paul-rad/)",
+                 "[Yuanxiong (Richard) Guo](https://business.utsa.edu/faculty/yuanxiong-richard-guo-ph-d/)",
                  "[Yeonjoo Park](https://business.utsa.edu/faculty/yeonjoo-park-ph-d/)",
                  "[Min Wang](https://business.utsa.edu/faculty/min-wang-ph-d/)")
 ) %>% 

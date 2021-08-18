@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2020-10-31-msda-faculty/",
+    "title": "MSDA Faculty",
+    "description": "A list of MSDA full-time faculty",
+    "author": [
+      {
+        "name": "Ashwin Malshe",
+        "url": "www.ashwinmalshe.com"
+      }
+    ],
+    "date": "2021-08-18",
+    "categories": [],
+    "contents": "\nWe don’t have an official listing for the faculty teaching in the MS in Data Analytics (MSDA) program at UTSA as we don’t have any professors permanently assigned to the program. However, there are a few professors, including me, who have been teaching regularly in MSDA. The following table lists these professors and the links to their profiles.\n\n\nCourse\n\n\nFaculty\n\n\nDA6213. Data-Driven Decision Making and Design\n\n\nYeonjoo Park\n\n\nDA6223. Data Analytics Tools and Techniques\n\n\nWenbo Wu\n\n\nIsil Koyuncu\n\n\nDA6233. Data Analytics Visualization and Communication\n\n\nAshwin Malshe\n\n\nDA6813. Data Analytics Applications\n\n\nArka Roy\n\n\nAshwin Malshe\n\n\nDA6823. Data Analytics Practicum I\n\n\nMax Kilger\n\n\nDA6833. Data Analytics Practicum II\n\n\nMax Kilger\n\n\nAshwin Malshe\n\n\nIS6713. Data Foundations\n\n\nAnthony Rios\n\n\nIS6733. Deep Learning on Cloud Platforms\n\n\nYuanxiong (Richard) Guo\n\n\nSTA6443. Statistical Modeling\n\n\nYeonjoo Park\n\n\nSTA 6543. Predictive Modeling\n\n\nMin Wang\n\n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-08-18T14:10:31-05:00",
+    "input_file": "msda-faculty.knit.md"
+  },
+  {
     "path": "posts/2020-12-12-ggorce/",
     "title": "Easy pie charts and donut charts with ggforce",
     "description": "I make pie charts and donut charts in ggplot2 using a combination of a bar plot and polar coordinates. This works fine but polar coordinates prevent using any other geoms or annotations that need Cartesian coordinates. For example, annoatation_raster doesn't work with polar coordinates. ggforce solves this issue.",
@@ -74,23 +91,6 @@
     "input_file": "donut-chart.utf8.md",
     "preview_width": 2112,
     "preview_height": 1632
-  },
-  {
-    "path": "posts/2020-10-31-msda-faculty/",
-    "title": "MSDA Faculty",
-    "description": "A list of MSDA full-time faculty",
-    "author": [
-      {
-        "name": "Ashwin Malshe",
-        "url": "www.ashwinmalshe.com"
-      }
-    ],
-    "date": "2020-10-31",
-    "categories": [],
-    "contents": "\nWe don’t have an official listing for the faculty teaching in the MS in Data Analytics (MSDA) program at UTSA as we don’t have any professors permanently assigned to the program. However, there are a few professors, including me, who have been teaching regularly in MSDA. The following table lists these professors and the links to their profiles.\n\n\nCourse\n\n\nFaculty\n\n\nDA6213. Data-Driven Decision Making and Design\n\n\nYeonjoo Park\n\n\nDA6223. Data Analytics Tools and Techniques\n\n\nWenbo Wu\n\n\nDA6233. Data Analytics Visualization and Communication\n\n\nAshwin Malshe\n\n\nDA6813. Data Analytics Applications\n\n\nArka Roy\n\n\nAshwin Malshe\n\n\nDA6823. Data Analytics Practicum I\n\n\nMax Kilger\n\n\nDA6833. Data Analytics Practicum II\n\n\nMax Kilger\n\n\nIS6713. Data Foundations\n\n\nAnthony Rios\n\n\nIS6733. Deep Learning on Cloud Platforms\n\n\nPaul Rad\n\n\nSTA6443. Statistical Modeling\n\n\nYeonjoo Park\n\n\nSTA 6543. Predictive Modeling\n\n\nMin Wang\n\n\n\n\n\n",
-    "preview": {},
-    "last_modified": "2020-10-31T20:14:54-05:00",
-    "input_file": {}
   },
   {
     "path": "posts/2020-10-31-plotting-election-win-probabilities/",
