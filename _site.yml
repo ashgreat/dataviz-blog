@@ -4,6 +4,7 @@ description: |
   R Data Visualization
 base_url: https://dataviz.school
 output_dir: "_site"
+favicon: Images/favicon.ico
 navbar:
   right:
     - text: "Home"
