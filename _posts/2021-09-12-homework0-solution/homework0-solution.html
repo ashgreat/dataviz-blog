@@ -1639,7 +1639,9 @@ This homework consists of 10 questions and each carries one point. Your objectiv
 <li>Maximum and minimum <code>volume_adj</code></li>
 <li>Maximum and minimum <code>median_adj</code> sale price</li>
 </ol>
-<p><em>Hint: If you group by <code>city</code>, you will get the summary across all the years and months. </em></p>
+<aside>
+<em>Hint: If you group by <code>city</code>, you will get the summary across all the years and months. </em>
+</aside>
 <p>Merge <code>housing_sum1</code> into <code>housing</code> by <code>city</code> and save it as a new dataset <code>housing_1</code>.</p>
 <p>Here I show first six rows of <code>housing_1</code> and only a select columns:</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -1750,7 +1752,9 @@ This homework consists of 10 questions and each carries one point. Your objectiv
 <li>Median listings</li>
 <li>Median sales</li>
 </ol>
-<p><em>Hint: If even a single value for <code>listings</code> or <code>sales</code> of a <code>city</code> is <code>NA</code>, the median of that variable will be <code>NA</code>. In order to avoid this, use <code>na.rm = TRUE</code> argument in <code>median()</code>. </em></p>
+<aside>
+<em>Hint: If even a single value for <code>listings</code> or <code>sales</code> of a <code>city</code> is <code>NA</code>, the median of that variable will be <code>NA</code>. In order to avoid this, use <code>na.rm = TRUE</code> argument in <code>median()</code>. </em>
+</aside>
 <p>Here I show first six rows of <code>housing_sum2</code> and all the columns:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -1802,7 +1806,9 @@ This homework consists of 10 questions and each carries one point. Your objectiv
 <li><p><code>listings_ind</code> - If a city’s <code>listings</code> is less than or equal to the median listings for that <code>year</code> and <code>month</code> across all the cities, the value should be <code>0</code> else it should be <code>1</code>.</p></li>
 <li><p><code>sales_ind</code> - If a city’s <code>sales</code> is less than or equal to the median sales for that <code>year</code> and <code>month</code> across all the cities, the value should be <code>0</code> else it should be <code>1</code>.</p></li>
 </ol>
-<p><em>Hint: This can be achieved using <code>ifelse()</code> function from R along with <code>mutate()</code> from <code>dplyr</code></em></p>
+<aside>
+<em>Hint: This can be achieved using <code>ifelse()</code> function from R along with <code>mutate()</code> from <code>dplyr</code></em>
+</aside>
 <p>Here I show first six rows of <code>housing_2</code> and some of the columns:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">

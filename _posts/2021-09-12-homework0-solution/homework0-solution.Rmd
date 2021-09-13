@@ -148,7 +148,9 @@ Using `housing` from Q4, create a new data frame `housing_sum1` with this inform
 1. Maximum and minimum `volume_adj`
 2. Maximum and minimum `median_adj` sale price
 
+<aside>
 *Hint: If you group by `city`, you will get the summary across all the years and months. *
+</aside>
 
 Merge `housing_sum1` into `housing` by `city` and save it as a new dataset `housing_1`.
 
@@ -219,7 +221,9 @@ Using `housing_1` from Q5, create a new data frame `housing_sum2` with this info
 1. Median listings
 2. Median sales
 
+<aside>
 *Hint: If even a single value for `listings` or `sales` of a `city` is `NA`, the median of that variable will be `NA`. In order to avoid this, use `na.rm = TRUE` argument in `median()`. *
+</aside>
 
 Here I show first six rows of `housing_sum2` and all the columns:
 
@@ -257,7 +261,9 @@ Modify `housing_2` from Q7 to add these indicator variables (also called dummy v
 
 2. `sales_ind` - If a city's `sales` is less than or equal to the median sales for that `year` and `month` across all the cities, the value should be `0` else it should be `1`.
 
+<aside>
 *Hint: This can be achieved using `ifelse()` function from R along with `mutate()` from `dplyr`*
+</aside>
 
 Here I show first six rows of `housing_2` and some of the columns:
 
