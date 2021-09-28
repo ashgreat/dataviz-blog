@@ -42,7 +42,7 @@ dt <- snp %>% left_join(cbind(tweet_links, tweet_img), by = "Date") %>%
          tweet_tooltip2 = ifelse(is.na(tweet_url), NA, paste0('<img src="', tweet_url, '" width="',
                                 round(width/3,0), '" height="',
                                 round(height/3,0),
-                                '" style="opacity:0.9;filter:alpha(opacity=90);">')))
+                                '" style="opacity:0.9;filter:alpha(opacity=40);">')))
   
 
 ```
