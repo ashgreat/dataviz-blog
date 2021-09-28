@@ -22,6 +22,15 @@
       <pubDate>Tue, 28 Sep 2021 00:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>ggplot2 Ptactice Problem Set</title>
+      <dc:creator>Ashwin Malshe</dc:creator>
+      <link>https://dataviz.school/posts/2021-09-28-ggplot2-ptactice-problem-set</link>
+      <description>This used to be a homework assignment in DA 6233. I converted it into a problem set.</description>
+      <guid>https://dataviz.school/posts/2021-09-28-ggplot2-ptactice-problem-set</guid>
+      <pubDate>Tue, 28 Sep 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://dataviz.school/posts/2021-09-28-ggplot2-ptactice-problem-set/Diamonds.png" medium="image" type="image/png" width="2108" height="1215"/>
+    </item>
+    <item>
       <title>Solution to Homework0 </title>
       <dc:creator>Ashwin Malshe</dc:creator>
       <link>https://dataviz.school/posts/2021-09-12-homework0-solution</link>

@@ -17,6 +17,25 @@
     "input_file": "kiyosaki-crash.knit.md"
   },
   {
+    "path": "posts/2021-09-28-ggplot2-ptactice-problem-set/",
+    "title": "ggplot2 Ptactice Problem Set",
+    "description": "This used to be a homework assignment in DA 6233. I converted it into a problem set.",
+    "author": [
+      {
+        "name": "Ashwin Malshe",
+        "url": {}
+      }
+    ],
+    "date": "2021-09-28",
+    "categories": [],
+    "contents": "\nIn this homework, you will use diamonds data set from ggplot2 package. It is automatically loaded when you execute library(ggplot2) so you don’t have to separately load it. Please create a duplicate of diamonds and use that for homework. This will avoid corrupting the original data set.\nMake sure that you understand the variables in the data by checking the help file by executing help(diamonds) in the console. The data has five variables that measure the dimensions. The diagram below explains these dimensions.\n\n\n\nInstructions\nYou are expected to recreate each plot exactly as shown in this homework.\nThe objective of this homework is to help you develop fine grain control over ggplot2. As such, please refrain from exercising artistic freedom!\nAll the plots use theme_minimal(). You can set this as your default theme by adding this line in the setup chunk after you load ggplot2 library: theme_set(theme_minimal())\nQ1\nRecreate the following graph. The parameter that controls transparency is set at 0.3. You need not get exactly the same colors but they must be discrete and should not follow a color gradient.\nHint: The points are hollow circles. Recall that we covered this specific shape in the last class.\nHint: Note that the Y axis text is modified.\n\n\n\nQ2\nThe previous graph looks cluttered. So you decided to use facets instead. Recreate the following graph:\n\n\n\nQ3\nNext, you want to know whether the price of diamonds depends on table and depth. Note the line types. Recreate the following graphs:\nHint: Pay attention to the X axis limits. Also, read up more on linetype here. Both Q3 plots use geom_smooth.\n\n\n\nHint: Pay attention to the X axis limits and breaks.\n\n\n\nQ4\nRecreate each of the following graphs for data exploration:\nHint: In this plot, change the colors manually. Use any colors you want but I have used a color palette with these colors: 99B898, FECEAB, FF847C, E84A5F, 2A363B. If you decide to use them, don’t forget to add a # prefix to each color code.\n\n\n\nHint: Pay attention to the axes text formatting\n\n\n\nHint: Note that the bars have a distinct border. You can use any color you want. Note also that the legend is not visible.\n\n\n\nHint: Here you have to use two new geoms for the violin plot and the jittered points.\n\n\n\nHint: This plot uses two layers of geom_smooth.\n\n\n\n\n\n\n",
+    "preview": "posts/2021-09-28-ggplot2-ptactice-problem-set/Diamonds.png",
+    "last_modified": "2021-09-28T16:15:25-05:00",
+    "input_file": "ggplot2-ptactice-problem-set.knit.md",
+    "preview_width": 2108,
+    "preview_height": 1215
+  },
+  {
     "path": "posts/2021-09-12-homework0-solution/",
     "title": "Solution to Homework0 ",
     "description": "This is the solution of MSDA Homework0 from 09/2020",
