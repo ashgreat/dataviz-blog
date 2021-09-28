@@ -1,0 +1,90 @@
+---
+title: "Kiyosaki Predicting Stock Market Crash"
+description: |
+  This post is WIP
+author:
+  - name: Ashwin Malshe
+    url: https://ashwinmalshe.com
+    affiliation: University of Texas at San Antonio
+    affiliation_url: https://business.utsa.edu/faculty/ashwin-malshe/
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(highcharter)
+library(readxl)
+
+```
+
+```{r}
+snp <- readxl::read_excel(here::here("data", "snp500.xlsx"), sheet = "Sheet1")
+tweet_links <- readxl::read_excel(here::here("data", "snp500.xlsx"), sheet = "Sheet3")
+
+# tweet_img <- map_df(tweet_links$tweet_url, 
+#                     function(x) {
+#                       RCurl::getURLContent(x) %>% 
+#                         png::readPNG() %>% dim() %>% 
+#                         set_names(c("height", "width", "clr"))
+# }) 
+# 
+# saveRDS(tweet_img, here::here("data", "tweet_img.rds"))
+tweet_img <- readRDS(here::here("data", "tweet_img.rds"))
+
+dt <- snp %>% left_join(cbind(tweet_links, tweet_img), by = "Date") %>% 
+  mutate(Date = as.Date(Date),
+         Adj_Close2 = ifelse(is.na(tweet_url), NA, Adj_Close),
+         tweet_tooltip = ifelse(is.na(tweet_url), NA, paste0('<img src="', tweet_url, '" width="',
+                                round(width/3,0), '" height="',
+                                round(height/3,0), '">')),
+         tweet_tooltip2 = ifelse(is.na(tweet_url), NA, paste0('<img src="', tweet_url, '" width="',
+                                round(width/3,0), '" height="',
+                                round(height/3,0),
+                                '" style="opacity:0.9;filter:alpha(opacity=90);">')))
+  
+
+```
+
+
+```{r layout="l-page"}
+dt %>% 
+  hchart("line", hcaes(Date, Adj_Close),
+         enableMouseTracking = F,
+         states = list(inactive = list(opacity = 1))) %>% 
+  hc_add_series(dt, "point", hcaes(Date, Adj_Close2)) %>% 
+  hc_yAxis(title = list(text = "S&P 500 Adjusted Close")) %>% 
+  hc_caption(text = '<em>Made by <b>Ashwin Malshe </b> <a href="www.dataviz.school">www.dataviz.school</a></em>') %>% 
+  hc_title(
+    text = "Kiyosaki Predicting Market Crash"
+  ) %>% 
+  hc_tooltip(
+    useHTML = TRUE,
+    formatter = JS(
+      "
+      function(){return(this.point.tweet_tooltip2)}
+      "
+    ),
+    shape = "square",
+    borderWidth = 0,
+    backgroundColor = NULL,
+    borderColor = NULL
+  ) %>%
+#   hc_add_annotation(
+#     shapes = list(
+#       type = "image",
+#       src = "https://bit.ly/3EVDsJD",
+#       width = 200, height = 145,
+#       point = list(
+#         x = NULL, xAxis = as.Date("2020-09-01"),
+#         y = 5000, yAxis = 0
+#       )
+#     )
+# ) %>% 
+  hc_add_theme(hc_theme_538())
+  
+```
+
+
+
