@@ -19,7 +19,7 @@ library(readxl)
 
 ```
 
-```{r}
+```{r eval=FALSE}
 snp <- readxl::read_excel(here::here("data", "snp500.xlsx"), sheet = "Sheet1")
 tweet_links <- readxl::read_excel(here::here("data", "snp500.xlsx"), sheet = "Sheet3")
 
@@ -44,11 +44,21 @@ dt <- snp %>% left_join(cbind(tweet_links, tweet_img), by = "Date") %>%
                                 round(height/3,0),
                                 '" style="opacity:0.9;filter:alpha(opacity=40);">')))
   
-saveRDS(dt, here::here("data", "kitisaki_crash.rds"))
+saveRDS(dt, here::here("data", "kiyosaki_crash.rds"))
 ```
+
+[Robert Kiyosaki](https://en.wikipedia.org/wiki/Robert_Kiyosaki) is a the bestselling author of many personal finance books, most notably [Rich Dad Poor Dad](https://www.richdad.com). But being good at personal finance doesn't mean that he is good at predicting stock market! Over the last 1.5 years, Kiyosaki has warned at least 19 times about an impending stock market crash. As it happens, many of his predictions were made at the bottom of the market. As such, if you followed his advice to move to cash, you would have lost out on the market run up. 
+
+Kiyosaki has a large fan following and enjoys strong loyalty from them. Many in the news media take his warnings seriously without looking at his past history such as [this article from Entrepreneur](https://www.entrepreneur.com/article/388670). About a week ago, the parody #FinTwit account Dr. Parik Patel shared the following image on Twitter that annotated S&P 500 Index with Kiyosaki's tweets about market crash. 
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Imagine taking investment advice from Robert Kiyosaki <a href="https://t.co/eXqacIDnPG">pic.twitter.com/eXqacIDnPG</a></p>&mdash; Dr. Parik Patel, BA, CFA, ACCA Esq. 💸 (@ParikPatelCFA) <a href="https://twitter.com/ParikPatelCFA/status/1442113763168108545?ref_src=twsrc%5Etfw">September 26, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+Although this visualization is pretty cool, it's difficult to read because it's static and has many objects on the chart. So I took this opportunity to create a interactive visualization using `highcharter`, `highcharts`, and R. In the line graph below, you can hover your mouse on the blue points to see the exact warning Kiyosaki tweeted. Enjoy playing with it!
 
 
 ```{r layout="l-page"}
+
+dt <- readRDS(here::here("data", "kiyosaki_crash.rds"))
 dt %>% 
   hchart("line", hcaes(Date, Adj_Close),
          enableMouseTracking = F,
@@ -89,16 +99,26 @@ dt %>%
 
 ## Code for making the plot
 
+To make the above plot, you will need two things:
+
+1. S&P 500 Index returns 
+2. Screenshots of Kiyosaki's tweets
+
+I downloaded the S&P 500 returns from [Yahoo Finance](https://finance.yahoo.com). For Kiyosaki's tweets, I searched for the terms "crash" and "crashed" on his Twitter timeline and went over the tweets that pertain to stock market crash. He has been using that word a lot for prices in many other assets like Bitcoin and gold. I did not use those tweets.
+
+You can download the data set as an RDS file from my Github repository for this blog as shown below. Next you are ready to make the chart!
 
 
 ```{r echo=TRUE, eval=FALSE}
 
 # Read the data set
-dt <- 
+dt <- readRDS(url("https://github.com/ashgreat/dataviz-blog/blob/main/data/kiyosaki_crash.rds?raw=true"))
+
+# Make the chart!
 
 dt %>% 
   hchart("line", hcaes(Date, Adj_Close),
-         enableMouseTracking = F,
+         enableMouseTracking = FALSE,
          states = list(inactive = list(opacity = 1))) %>% 
   hc_add_series(dt, "point", hcaes(Date, Adj_Close2)) %>% 
   hc_yAxis(title = list(text = "S&P 500 Adjusted Close")) %>% 
