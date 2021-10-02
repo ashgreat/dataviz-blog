@@ -44,7 +44,7 @@ dt <- snp %>% left_join(cbind(tweet_links, tweet_img), by = "Date") %>%
                                 round(height/3,0),
                                 '" style="opacity:0.9;filter:alpha(opacity=40);">')))
   
-
+saveRDS(dt, here::here("data", "kitisaki_crash.rds"))
 ```
 
 
@@ -87,4 +87,29 @@ dt %>%
 ```
 
 
+## Code for making the plot
+
+
+
+```{r echo=TRUE, eval=FALSE}
+
+# Read the data set
+dt <- 
+
+dt %>% 
+  hchart("line", hcaes(Date, Adj_Close),
+         enableMouseTracking = F,
+         states = list(inactive = list(opacity = 1))) %>% 
+  hc_add_series(dt, "point", hcaes(Date, Adj_Close2)) %>% 
+  hc_yAxis(title = list(text = "S&P 500 Adjusted Close")) %>% 
+  hc_caption(text = '<em>Made by <b>Ashwin Malshe </b> <a href="www.dataviz.school">www.dataviz.school</a></em>') %>% 
+  hc_title( text = "Kiyosaki Predicting Market Crash") %>% 
+  hc_tooltip( useHTML = TRUE,
+              formatter = JS("function(){return(this.point.tweet_tooltip2)}"),
+              shape = "square",
+              borderWidth = 0,
+              backgroundColor = NULL,
+              borderColor = NULL) %>%
+  hc_add_theme(hc_theme_538())
+```
 
