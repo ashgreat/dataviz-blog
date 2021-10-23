@@ -8,7 +8,9 @@ author:
     affiliation: University of Texas at San Antonio
 bibliography: biblio.bib
 date: "`r Sys.Date()`"
-output: distill::distill_article
+output:
+  distill::distill_article:
+    self_contained: true
 ---
 
 ```{r setup, include=FALSE}
@@ -185,8 +187,10 @@ How to read this plot? The front row of columns belong to Decile 1 from year t+1
 
 I decided to host my plot on Shinyapps.io as a Shiny app, which made it possible to drag or rotate the bar plot. Now you are free to play with it! The way to read the plot is the same as the static plot.
 
+Check out the webapp here: https://malshe.shinyapps.io/mf-performance/
 
-```{r}
+
+```{r eval=FALSE}
 
 knitr::include_app('https://malshe.shinyapps.io/mf-performance/', height = '600px')
 
