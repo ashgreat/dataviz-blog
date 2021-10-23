@@ -170,7 +170,7 @@ hc <- highchart() %>%
                   )
     )
   ) %>% 
-  hc_add_dependency("plugins/rotate-3d.js")
+  hc_add_dependency("highcharts-3d.js")
 
 hc
 
