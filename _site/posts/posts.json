@@ -1,5 +1,24 @@
 [
   {
+    "path": "posts/installing-r-and-rstudio/",
+    "title": "Installing R and RStudio",
+    "description": "This is an old post about installing R and RStudio. It still works.",
+    "author": [
+      {
+        "name": "Ashwin Malshe",
+        "url": {}
+      }
+    ],
+    "date": "2022-08-08",
+    "categories": [],
+    "contents": "\nThis a short tutorial for the incoming students of UTSA’s MS in Data\nAnalytics program. I am going to assume that the reader has no knowledge\nof R and RStudio, the Integrated Development Environment (IDE), which we\nuse to code.\n\nIf you are a Mac user and you are comfortable with command line tools\nusing Terminal, I suggest taking more systematic route for preparing\nyour MacOS for R installation using Homebrew. Instructions are available\nhere.\nOtherwise, just follow the instructions below like everyone else!\n\n\nR is available for download for Linux, MacOS, and Windows from\nthis link: https://cloud.r-project.org. The latest version of R is\n4.2.1 as of 08 August 2022. This is going to be a large\ndownload (about 70 MB) so make sure that you have enough space on the\nhard drive. Also, note that the final installation will take even more\nspace.\nIf you are using older versions of Mac OSX (El Capitan,\nMavericks, etc.), you will find your installation files in the\nsub-directories from this page: https://cloud.r-project.org\nOnce you install R, you can launch it to see whether the\ninstallation is fine. On my Mac, once launched, R looks like\nthis:\n\n\n\nNext we download RStudio IDE. RStudio needs R installation to\nfunction so please make sure that you have successfully followed Steps 1\nthrough 3 above.\nThe latest stable version of RStudio as of 08 August 2022 is\n2022.07.1+554. It can be obtained for all the operating\nsystems from this link: https://www.rstudio.com/products/rstudio/download/#download.\nAgain, the file size is large so make sure that you have enough space on\nthe computer.\nOnce you download RStudio, install the software by opening the\nexe file for Windows and dmg file for Mac. The\ninstallation will be smooth. Just follow the directions, if any, on the\nscreen.\nOnce you launch it you will see a window similar to mine:\n\n\n\nIf RStudio locates the R installation, everything is fine.\nOtherwise, uninstall both R and RStudio and reinstall them in the order\noutlined above. RStudio looks similar to Matlab in case you have used it\nbefore. There is a lot of customization possible for RStudio. You can\ncheck that out from Tools/Global Options menu.\n\n\n\n",
+    "preview": "posts/installing-r-and-rstudio/distill-preview.png",
+    "last_modified": "2022-08-08T17:41:59-05:00",
+    "input_file": "installing-r-and-rstudio.knit.md",
+    "preview_width": 1312,
+    "preview_height": 930
+  },
+  {
     "path": "posts/2020-11-30-mf-performance/",
     "title": "Persistence in Mutual Fund Performance",
     "description": "In this article, I reproduce Figure 1 from Mark Carhart's classic 1997 Journal of Finance article titled \"On Persistence in Mutual Fund Performance\". The visualizations are created using highcharter and echarts4r packages. It is an interactive bar plot that shows that there is a very low persistence in the mutual fund performance.",

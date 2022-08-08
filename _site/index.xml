@@ -12,7 +12,16 @@
       <link>https://dataviz.school</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Fri, 22 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 08 Aug 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Installing R and RStudio</title>
+      <dc:creator>Ashwin Malshe</dc:creator>
+      <link>https://dataviz.school/posts/installing-r-and-rstudio</link>
+      <description>This is an old post about installing R and RStudio. It still works.</description>
+      <guid>https://dataviz.school/posts/installing-r-and-rstudio</guid>
+      <pubDate>Mon, 08 Aug 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://dataviz.school/posts/installing-r-and-rstudio/distill-preview.png" medium="image" type="image/png" width="1312" height="930"/>
+    </item>
     <item>
       <title>Persistence in Mutual Fund Performance</title>
       <dc:creator>Ashwin Malshe</dc:creator>
