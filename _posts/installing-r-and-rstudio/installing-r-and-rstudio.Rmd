@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 This a short tutorial for the incoming students of UTSA's MS in Data Analytics program. I am going to assume that the reader has no knowledge of R and RStudio, the Integrated Development Environment (IDE), which we use to code.
 
-<div style="background-color:rgba(0, 0, 0, 0.0470588); text-align:left; vertical-align: middle; padding: 40px;"> If you are a Mac user and you are comfortable with command line tools using Terminal, I suggest taking more systematic route for preparing your MacOS for R installation using Homebrew. Instructions are available <a href="https://github.com/adamhsparks/setup_macOS_for_R">here</a>. Otherwise, just follow the instructions below like everyone else!
+<div style="background-color:rgba(0, 0, 0, 0.0470588); text-align:left; vertical-align: middle; padding: 40px;"> If you are a Mac user and you are comfortable with command line tools using Terminal, I suggest taking more systematic route for preparing your MacOS for R installation using Homebrew. Instructions are available <a href="https://github.com/jacobxk/setup_macOS_for_R">here</a>. Otherwise, just follow the instructions below like everyone else!
  </div>
 <br>
 
