@@ -1,0 +1,73 @@
+---
+title: "Exam 2 Score Distribution for MKT 3013"
+author:
+  - name: Ashwin Malshe
+    url: https://ashwinmalshe.com
+    affiliation: University of Texas at San Antonio
+    affiliation_url: https://business.utsa.edu/faculty/ashwin-malshe/
+date: 2023-03-05
+output:
+  distill::distill_article:
+    self_contained: false
+    code_folding: false
+---
+
+```{r include=FALSE}
+library(highcharter)
+library(dplyr)
+```
+
+
+```{r echo=FALSE}
+d1 = data.frame(
+               V1 = c(92L,98L,88L,86L,98L,94L,92L,
+                      92L,98L,98L,98L,94L,96L,92L,100L,74L,80L,80L,
+                      94L,96L,86L,90L,94L,96L,96L,92L,94L,98L,92L,94L,
+                      98L,98L,86L,96L,90L,92L,98L,96L,96L,94L,96L,
+                      86L,84L,94L,88L,96L,88L,88L,86L,98L,98L,96L,90L,
+                      98L,96L,100L,100L,96L,98L,96L,92L,82L,90L,92L,
+                      90L,78L,88L,90L,96L,94L,92L,98L,96L,96L,96L,98L,
+                      94L,90L,86L,92L,92L,86L,98L,60L,82L,100L,84L,
+                      94L,90L,92L,92L,94L,100L,88L,94L,88L,100L,98L,
+                      88L,98L,92L,96L,96L,100L,94L,90L,98L,94L,100L,
+                      92L,94L,96L,96L,88L,96L,96L,98L,90L,98L,88L,94L,
+                      94L,94L,92L,98L,86L,94L,88L,98L,94L,86L,100L,
+                      100L,88L,92L,90L,94L,82L,98L,96L,98L,84L,94L,90L,
+                      94L,94L,86L,88L,98L,100L,90L,88L,94L)
+     )
+
+
+```
+
+```{r echo=FALSE}
+d2 = d1 |> 
+  count(V1) |> 
+  mutate(V2 = ifelse(V1 <= 80, 80, V1)) |> 
+  group_by(V2) |> 
+  summarize(n = sum(n), .groups = "drop") |> 
+  mutate(V2 = as.character(V2),
+         V2 = ifelse(V2 == "80", "<= 80", V2))
+
+
+
+```
+
+```{r echo=FALSE}
+
+d2 |> 
+  hchart(type = "column", hcaes(x = V2, y = n), name = "Number of students") |> 
+  hc_xAxis(title = list(text = "Exam 2 Score")) |> 
+  hc_yAxis(title = list(text = "Number of Students")) |> 
+   hc_annotations(
+    list(
+      labels = 
+        list(
+          list(
+            point = list(x = 1, y = 20, xAxis = 0, yAxis = 0),
+            text = "Average: 92.7<br/>Median: 94<br/>Minimum: 60<br/>Maximum: 100",
+            shape = "rect"
+            )))) |> 
+  
+  hc_add_theme(hc_theme_monokai())
+```
+

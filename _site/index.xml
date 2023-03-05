@@ -12,7 +12,15 @@
       <link>https://dataviz.school</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Mon, 08 Aug 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Exam 2 Score Distribution for MKT 3013</title>
+      <dc:creator>Ashwin Malshe</dc:creator>
+      <link>https://dataviz.school/posts/2023-03-05-mkt-3013-score-distribution</link>
+      <description>Exam 2 Score Distribution for MKT 3013</description>
+      <guid>https://dataviz.school/posts/2023-03-05-mkt-3013-score-distribution</guid>
+      <pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Installing R and RStudio</title>
       <dc:creator>Ashwin Malshe</dc:creator>

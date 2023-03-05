@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
   <meta name="generator" content="distill" />
-  <link rel="alternate" type="application/rss+xml" href="https://dataviz.school/index.xml" />
 
   <style type="text/css">
   /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
@@ -51,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -74,11 +74,11 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
@@ -86,637 +86,38 @@ code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
+
   <!--radix_placeholder_meta_tags-->
-  <title>R Data Visualization</title>
+  <title>Exam 2 Score Distribution for MKT 3013</title>
 
 
-  <link rel="icon" type="image/vnd.microsoft.icon" href="Images/favicon.ico"/>
 
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2023-03-05"/>
+  <meta property="article:created" itemprop="dateCreated" content="2023-03-05"/>
+  <meta name="article:author" content="Ashwin Malshe"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="R Data Visualization"/>
+  <meta property="og:title" content="Exam 2 Score Distribution for MKT 3013"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="R Data Visualization"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="R Data Visualization"/>
+  <meta property="twitter:title" content="Exam 2 Score Distribution for MKT 3013"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","listing"]}},"value":[{"type":"character","attributes":{},"value":["R Data Visualization"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Exam 2 Score Distribution for MKT 3013"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["Ashwin Malshe"]},{"type":"character","attributes":{},"value":["https://ashwinmalshe.com"]},{"type":"character","attributes":{},"value":["University of Texas at San Antonio"]},{"type":"character","attributes":{},"value":["https://business.utsa.edu/faculty/ashwin-malshe/"]}]}]},{"type":"character","attributes":{},"value":["2023-03-05"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","code_folding"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["mkt-3013-score-distribution_files/anchor-4.2.2/anchor.min.js","mkt-3013-score-distribution_files/bowser-1.9.3/bowser.min.js","mkt-3013-score-distribution_files/distill-2.2.21/template.v2.js","mkt-3013-score-distribution_files/header-attrs-2.19/header-attrs.js","mkt-3013-score-distribution_files/highchart-binding-0.9.4/highchart.js","mkt-3013-score-distribution_files/highcharts-9.3.1/css/htmlwdgtgrid.css","mkt-3013-score-distribution_files/highcharts-9.3.1/css/motion.css","mkt-3013-score-distribution_files/highcharts-9.3.1/custom/appear.js","mkt-3013-score-distribution_files/highcharts-9.3.1/custom/delay-animation.js","mkt-3013-score-distribution_files/highcharts-9.3.1/custom/reset.js","mkt-3013-score-distribution_files/highcharts-9.3.1/custom/symbols-extra.js","mkt-3013-score-distribution_files/highcharts-9.3.1/custom/text-symbols.js","mkt-3013-score-distribution_files/highcharts-9.3.1/custom/tooltip-delay.js","mkt-3013-score-distribution_files/highcharts-9.3.1/highcharts-3d.js","mkt-3013-score-distribution_files/highcharts-9.3.1/highcharts-more.js","mkt-3013-score-distribution_files/highcharts-9.3.1/highcharts.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/accessibility.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/annotations-advanced.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/annotations.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/arrow-symbols.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/boost-canvas.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/boost.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/broken-axis.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/bullet.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/coloraxis.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/current-date-indicator.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/cylinder.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/data.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/datagrouping.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/debugger.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/dependency-wheel.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/dotplot.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/drag-panes.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/draggable-points.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/drilldown.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/dumbbell.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/export-data.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/exporting.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/full-screen.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/funnel.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/funnel3d.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/gantt.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/grid-axis.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/heatmap.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/heikinashi.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/histogram-bellcurve.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/hollowcandlestick.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/item-series.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/lollipop.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/map.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/marker-clusters.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/networkgraph.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/no-data-to-display.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/offline-exporting.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/oldie-polyfills.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/oldie.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/organization.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/overlapping-datalabels.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/parallel-coordinates.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/pareto.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/pathfinder.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/pattern-fill.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/price-indicator.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/pyramid3d.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/sankey.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/series-label.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/solid-gauge.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/sonification.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/static-scale.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/stock-tools.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/stock.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/streamgraph.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/sunburst.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/tilemap.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/timeline.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/treegrid.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/treemap.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/variable-pie.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/variwide.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/vector.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/venn.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/windbarb.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/wordcloud.js","mkt-3013-score-distribution_files/highcharts-9.3.1/modules/xrange.js","mkt-3013-score-distribution_files/highcharts-9.3.1/plugins/draggable-legend.js","mkt-3013-score-distribution_files/highcharts-9.3.1/plugins/grouped-categories.js","mkt-3013-score-distribution_files/highcharts-9.3.1/plugins/highcharts-regression.js","mkt-3013-score-distribution_files/highcharts-9.3.1/plugins/motion.js","mkt-3013-score-distribution_files/highcharts-9.3.1/plugins/multicolor_series.js","mkt-3013-score-distribution_files/htmlwidgets-1.5.4/htmlwidgets.js","mkt-3013-score-distribution_files/jquery-3.6.0/jquery-3.6.0.js","mkt-3013-score-distribution_files/jquery-3.6.0/jquery-3.6.0.min.js","mkt-3013-score-distribution_files/jquery-3.6.0/jquery-3.6.0.min.map","mkt-3013-score-distribution_files/popper-2.6.0/popper.min.js","mkt-3013-score-distribution_files/proj4js-2.3.15/proj4.js","mkt-3013-score-distribution_files/tippy-6.2.7/tippy-bundle.umd.min.js","mkt-3013-score-distribution_files/tippy-6.2.7/tippy-light-border.css","mkt-3013-score-distribution_files/tippy-6.2.7/tippy.css","mkt-3013-score-distribution_files/tippy-6.2.7/tippy.umd.min.js","mkt-3013-score-distribution_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
   <!--radix_placeholder_navigation_in_header-->
-  <meta name="distill:offset" content=""/>
-
-  <script type="application/javascript">
-
-    window.headroom_prevent_pin = false;
-
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        tolerance: 5,
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
-  </script>
-
-  <style type="text/css">
-
-  /* Theme (user-documented overrideables for nav appearance) */
-
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #0F2E3D;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .distill-site-nav a:hover {
-    color: white;
-  }
-
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-
-  .distill-site-header {
-
-  }
-
-  .distill-site-footer {
-
-  }
-
-
-  /* Site Header */
-
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-
-
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-
-  .distill-site-header .title {
-    font-size: 18px;
-    min-width: 150px;
-  }
-
-  .distill-site-header .logo {
-    padding: 0;
-  }
-
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-
-
-
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-
-
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-dropdown-active {
-    display: block;
-  }
-
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative; min-height: 500px; }
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-
-  /* Site Footer */
-
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-
-  /* Headroom */
-
-  d-title {
-    padding-top: 6rem;
-  }
-
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-
-  .headroom--unpinned {
-    top: -100px;
-  }
-
-  .headroom--pinned {
-    top: 0;
-  }
-
-  /* adjust viewport for navbar height */
-  /* helps vertically center bootstrap (non-distill) content */
-  .min-vh-100 {
-    min-height: calc(100vh - 100px) !important;
-  }
-
-  </style>
-
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
-  <script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
-  <script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
-
-  <script type="application/javascript">
-
-  function getMeta(metaName) {
-    var metas = document.getElementsByTagName('meta');
-    for (let i = 0; i < metas.length; i++) {
-      if (metas[i].getAttribute('name') === metaName) {
-        return metas[i].getAttribute('content');
-      }
-    }
-    return '';
-  }
-
-  function offsetURL(url) {
-    var offset = getMeta('distill:offset');
-    return offset ? offset + '/' + url : url;
-  }
-
-  function createFuseIndex() {
-
-    // create fuse index
-    var options = {
-      keys: [
-        { name: 'title', weight: 20 },
-        { name: 'categories', weight: 15 },
-        { name: 'description', weight: 10 },
-        { name: 'contents', weight: 5 },
-      ],
-      ignoreLocation: true,
-      threshold: 0
-    };
-    var fuse = new window.Fuse([], options);
-
-    // fetch the main search.json
-    return fetch(offsetURL('search.json'))
-      .then(function(response) {
-        if (response.status == 200) {
-          return response.json().then(function(json) {
-            // index main articles
-            json.articles.forEach(function(article) {
-              fuse.add(article);
-            });
-            // download collections and index their articles
-            return Promise.all(json.collections.map(function(collection) {
-              return fetch(offsetURL(collection)).then(function(response) {
-                if (response.status === 200) {
-                  return response.json().then(function(articles) {
-                    articles.forEach(function(article) {
-                      fuse.add(article);
-                    });
-                  })
-                } else {
-                  return Promise.reject(
-                    new Error('Unexpected status from search index request: ' +
-                              response.status)
-                  );
-                }
-              });
-            })).then(function() {
-              return fuse;
-            });
-          });
-
-        } else {
-          return Promise.reject(
-            new Error('Unexpected status from search index request: ' +
-                        response.status)
-          );
-        }
-      });
-  }
-
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-
-    // get search element (bail if we don't have one)
-    var searchEl = window.document.getElementById('distill-search');
-    if (!searchEl)
-      return;
-
-    createFuseIndex()
-      .then(function(fuse) {
-
-        // make search box visible
-        searchEl.classList.remove('hidden');
-
-        // initialize autocomplete
-        var options = {
-          autoselect: true,
-          hint: false,
-          minLength: 2,
-        };
-        window.autocomplete(searchEl, options, [{
-          source: function(query, callback) {
-            const searchOptions = {
-              isCaseSensitive: false,
-              shouldSort: true,
-              minMatchCharLength: 2,
-              limit: 10,
-            };
-            var results = fuse.search(query, searchOptions);
-            callback(results
-              .map(function(result) { return result.item; })
-            );
-          },
-          templates: {
-            suggestion: function(suggestion) {
-              var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
-                ? `<img src="${offsetURL(suggestion.preview)}"</img>`
-                : '';
-              var html = `
-                <div class="search-item">
-                  <h3>${suggestion.title}</h3>
-                  <div class="search-item-description">
-                    ${suggestion.description || ''}
-                  </div>
-                  <div class="search-item-preview">
-                    ${img}
-                  </div>
-                </div>
-              `;
-              return html;
-            }
-          }
-        }]).on('autocomplete:selected', function(event, suggestion) {
-          window.location.href = offsetURL(suggestion.path);
-        });
-        // remove inline display style on autocompleter (we want to
-        // manage responsive display via css)
-        $('.algolia-autocomplete').css("display", "");
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-
-  });
-
-  </script>
-
-  <style type="text/css">
-
-  .nav-search {
-    font-size: x-small;
-  }
-
-  /* Algolioa Autocomplete */
-
-  .algolia-autocomplete {
-    display: inline-block;
-    margin-left: 10px;
-    vertical-align: sub;
-    background-color: white;
-    color: black;
-    padding: 6px;
-    padding-top: 8px;
-    padding-bottom: 0;
-    border-radius: 6px;
-    border: 1px #0F2E3D solid;
-    width: 180px;
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-nav .algolia-autocomplete {
-      display: none;
-      visibility: hidden;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete {
-      display: inline-block;
-      visibility: visible;
-    }
-    .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
-      margin-left: 0;
-      width: 400px;
-      max-height: 400px;
-    }
-  }
-
-  .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
-    width: 90%;
-    outline: none;
-    border: none;
-  }
-
-  .algolia-autocomplete .aa-hint {
-    color: #999;
-  }
-  .algolia-autocomplete .aa-dropdown-menu {
-    width: 550px;
-    max-height: 70vh;
-    overflow-x: visible;
-    overflow-y: scroll;
-    padding: 5px;
-    margin-top: 3px;
-    margin-left: -150px;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #999;
-    border-top: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
-    cursor: pointer;
-    padding: 5px 4px;
-    border-bottom: 1px solid #eee;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
-    border-bottom: none;
-    margin-bottom: 2px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
-    overflow: hidden;
-    font-size: 0.8em;
-    line-height: 1.4em;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
-    font-size: 1rem;
-    margin-block-start: 0;
-    margin-block-end: 5px;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
-    display: inline-block;
-    overflow: hidden;
-    height: 2.8em;
-    width: 80%;
-    margin-right: 4%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
-    display: inline-block;
-    width: 15%;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
-    height: 3em;
-    width: auto;
-    display: none;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
-    display: initial;
-  }
-
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-    background-color: #eee;
-  }
-  .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  </style>
-
-
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
 
@@ -1026,10 +427,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     position: relative;
     margin-bottom: 2.5em;
     margin-top: 1.5em;
-  }
-
-  .figure img {
-    width: 100%;
   }
 
   .figure .caption {
@@ -1861,7 +1258,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        if ($(this).children()[0].nodeName == "D-FOOTNOTE") {
+          var fn = $(this).children()[0]
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -1872,6 +1278,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1971,6 +1402,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -1993,7 +1426,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -2032,440 +1465,107 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="mkt-3013-score-distribution_files/header-attrs-2.19/header-attrs.js"></script>
+  <script src="mkt-3013-score-distribution_files/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <script src="mkt-3013-score-distribution_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="mkt-3013-score-distribution_files/proj4js-2.3.15/proj4.js"></script>
+  <link href="mkt-3013-score-distribution_files/highcharts-9.3.1/css/motion.css" rel="stylesheet" />
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/highcharts.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/highcharts-3d.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/highcharts-more.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/stock.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/map.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/data.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/exporting.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/offline-exporting.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/drilldown.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/item-series.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/overlapping-datalabels.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/annotations.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/export-data.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/funnel.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/heatmap.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/treemap.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/sankey.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/dependency-wheel.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/organization.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/solid-gauge.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/streamgraph.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/sunburst.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/vector.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/wordcloud.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/xrange.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/tilemap.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/venn.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/gantt.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/timeline.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/parallel-coordinates.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/bullet.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/coloraxis.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/dumbbell.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/lollipop.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/series-label.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/plugins/motion.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/custom/reset.js"></script>
+  <script src="mkt-3013-score-distribution_files/highcharts-9.3.1/modules/boost.js"></script>
+  <script src="mkt-3013-score-distribution_files/highchart-binding-0.9.4/highchart.js"></script>
+  <script src="mkt-3013-score-distribution_files/popper-2.6.0/popper.min.js"></script>
+  <link href="mkt-3013-score-distribution_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="mkt-3013-score-distribution_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="mkt-3013-score-distribution_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="mkt-3013-score-distribution_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="mkt-3013-score-distribution_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="mkt-3013-score-distribution_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="mkt-3013-score-distribution_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"R Data Visualization","authors":[]}
+{"title":"Exam 2 Score Distribution for MKT 3013","authors":[{"author":"Ashwin Malshe","authorURL":"https://ashwinmalshe.com","affiliation":"University of Texas at San Antonio","affiliationURL":"https://business.utsa.edu/faculty/ashwin-malshe/","orcidID":""}],"publishedDate":"2023-03-05T00:00:00.000+05:30","citationText":"Malshe, 2023"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">R Data Visualization</a>
-<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
-</div>
-<div class="nav-right">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="index.xml">
-<i class="fa fa-rss" aria-hidden="true"></i>
-</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).on("load", function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash && window.location.hash.startsWith("#category:")) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace(/^#category:/, "");
-      page_category = decodeURIComponent(page_category)
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + decodeURIComponent(window.location.hash) + '"]').addClass('active');
-
-      // update the list_caption
-      var list_caption = $('.posts-list-caption');
-      var caption = (page_category || '').toLowerCase() === "articles"
-        ? list_caption.attr('data-caption')
-        : ('Category: ' + page_category.replace(/_/g," "));
-      list_caption.text(caption);
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-      // reset list caption
-      var list_caption = $('.posts-list-caption');
-      list_caption.text(list_caption.attr('data-caption'));
-
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // click handling for tags
-  $('.dt-tag').click(function(ev) {
-    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
-    return false;
-  })
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-apply-limit l-page">
-<div class="posts-list">
-<h1 class="posts-list-caption" data-caption="R Data Visualization">R Data Visualization</h1>
-<a href="posts/2023-03-05-mkt-3013-score-distribution/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">March 4, 2023</div>
-<div class="dt-authors">
-<div class="dt-author">Ashwin Malshe</div>
-</div>
-</div>
-<div class="thumbnail"></div>
-<div class="description">
-<h2>Exam 2 Score Distribution for MKT 3013</h2>
-<div class="dt-tags"></div>
-<p></p>
-</div>
-</a>
-<a href="posts/installing-r-and-rstudio/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Aug. 8, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Ashwin Malshe</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/installing-r-and-rstudio/distill-preview.png"/>
-</div>
-<div class="description">
-<h2>Installing R and RStudio</h2>
-<div class="dt-tags"></div>
-<p>This is an old post about installing R and RStudio. It still works.</p>
-</div>
-</a>
-<a href="posts/2020-11-30-mf-performance/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Oct. 22, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Ashwin Malshe</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2020-11-30-mf-performance/distill-preview.png"/>
-</div>
-<div class="description">
-<h2>Persistence in Mutual Fund Performance</h2>
-<div class="dt-tags"></div>
-<p>In this article, I reproduce Figure 1 from Mark Carhart's classic 1997 Journal of Finance article titled "On Persistence in Mutual Fund Performance". The visualizations are created using highcharter and echarts4r packages. It is an interactive bar plot that shows that there is a very low persistence in the mutual fund performance.</p>
-</div>
-</a>
-<a href="posts/2021-10-04-visualization-of-monthly-nber-paper-submissions/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Oct. 4, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Ashwin Malshe</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2021-10-04-visualization-of-monthly-nber-paper-submissions/visualization-of-monthly-nber-paper-submissions_files/figure-html5/unnamed-chunk-1-1.png"/>
-</div>
-<div class="description">
-<h2>Visualization of monthly NBER paper submissions</h2>
-<div class="dt-tags"></div>
-<p>This post is a tidytuesday post. See the post below for the data source.</p>
-</div>
-</a>
-<a href="posts/2021-09-27-kiyosaki/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Oct. 2, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Ashwin Malshe</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Kiyosaki Predicting Stock Market Crash</h2>
-<div class="dt-tags"></div>
-<p>This post is WIP</p>
-</div>
-</a>
-<a href="posts/2021-09-28-ggplot2-ptactice-problem-set/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Sept. 28, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Ashwin Malshe</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2021-09-28-ggplot2-ptactice-problem-set/Diamonds.png"/>
-</div>
-<div class="description">
-<h2>ggplot2 Ptactice Problem Set</h2>
-<div class="dt-tags"></div>
-<p>This used to be a homework assignment in DA 6233. I converted it into a problem set.</p>
-</div>
-</a>
-<a href="posts/2021-09-12-homework0-solution/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Sept. 12, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Ashwin Malshe</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Solution to Homework0 </h2>
-<div class="dt-tags"></div>
-<p>This is the solution of MSDA Homework0 from 09/2020</p>
-</div>
-</a>
-<a href="posts/2020-10-31-msda-faculty/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Aug. 18, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Ashwin Malshe</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>MSDA Faculty</h2>
-<div class="dt-tags"></div>
-<p>A list of MSDA full-time faculty</p>
-</div>
-</a>
-<a href="posts/2020-12-12-ggorce/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Dec. 12, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Ashwin Malshe</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2020-12-12-ggorce/distill-preview.png"/>
-</div>
-<div class="description">
-<h2>Easy pie charts and donut charts with ggforce</h2>
-<div class="dt-tags"></div>
-<p>I make pie charts and donut charts in ggplot2 using a combination of a bar plot and polar coordinates. This works fine but polar coordinates prevent using any other geoms or annotations that need Cartesian coordinates. For example, annoatation_raster doesn't work with polar coordinates. ggforce solves this issue.</p>
-</div>
-</a>
-<a href="posts/2020-12-02-election-donuts-pics/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Dec. 2, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Ashwin Malshe</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2020-12-02-election-donuts-pics/distill-preview.png"/>
-</div>
-<div class="description">
-<h2>Donut Chart and Geofacets with Images</h2>
-<div class="dt-tags"></div>
-<p>In this post, I recreate the donut chart overlaid on geo facets. Based on a friend's feedback, I now add pictures of winners of each state.</p>
-</div>
-</a>
-<a href="posts/2020-11-20--us-election-donut/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Nov. 19, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Ashwin Malshe</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2020-11-20--us-election-donut/distill-preview.png"/>
-</div>
-<div class="description">
-<h2>Donut Chart and Geofacets</h2>
-<div class="dt-tags"></div>
-<p>How to combine a donut chart with geofacets in R.</p>
-</div>
-</a>
-<a href="posts/2020-10-31-plotting-election-win-probabilities/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Oct. 31, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Ashwin Malshe</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2020-10-31-plotting-election-win-probabilities/plotting-election-win-probabilities_files/figure-html5/unnamed-chunk-4-1.png"/>
-</div>
-<div class="description">
-<h2>Mapping Election Win Probabilities</h2>
-<div class="dt-tags"></div>
-<p>I show how to create a election map using ggplot2</p>
-</div>
-</a>
-<a href="posts/welcome/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Oct. 31, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Ashwin Malshe</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Welcome to R Data Visualization</h2>
-<div class="dt-tags"></div>
-<p>Welcome to my new blog, R Data Visualization. I hope youe enjoy the code
-and visualizations!</p>
-</div>
-</a>
-<a href="posts/2020-10-31-plotting-covid-19-pandemic/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">March 8, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Ashwin Malshe</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Plotting Covid-19 Pandemic</h2>
-<div class="dt-tags"></div>
-<p>Interactive plot of Covid-19 cases</p>
-</div>
-</a>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>R Data Visualization</h1>
+<h1>Exam 2 Score Distribution for MKT 3013</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
 </div>
 
+<div class="d-byline">
+  Ashwin Malshe <a href="https://ashwinmalshe.com"
+class="uri">https://ashwinmalshe.com</a> (University of Texas at San
+Antonio)<a href="https://business.utsa.edu/faculty/ashwin-malshe/"
+class="uri">https://business.utsa.edu/faculty/ashwin-malshe/</a>
+  
+<br/>2023-03-05
+</div>
 
 <div class="d-article">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div id="htmlwidget-851140cfc7ec82f32321" style="width:624px;height:384px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-851140cfc7ec82f32321">{"x":{"hc_opts":{"chart":{"reflow":true},"title":{"text":null},"yAxis":{"title":{"text":"Number of Students"},"type":"linear"},"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0,"showInLegend":false},"treemap":{"layoutAlgorithm":"squarified"},"scatter":{"marker":{"symbol":"circle"}}},"series":[{"group":"group","data":[{"V2":"<= 80","n":5,"y":5,"name":"<= 80"},{"V2":"82","n":3,"y":3,"name":"82"},{"V2":"84","n":3,"y":3,"name":"84"},{"V2":"86","n":10,"y":10,"name":"86"},{"V2":"88","n":14,"y":14,"name":"88"},{"V2":"90","n":13,"y":13,"name":"90"},{"V2":"92","n":18,"y":18,"name":"92"},{"V2":"94","n":26,"y":26,"name":"94"},{"V2":"96","n":24,"y":24,"name":"96"},{"V2":"98","n":26,"y":26,"name":"98"},{"V2":"100","n":11,"y":11,"name":"100"}],"type":"column","name":"Number of students"}],"xAxis":{"type":"category","title":{"text":"Exam 2 Score"}},"annotations":[{"labels":[{"point":{"x":1,"y":20,"xAxis":0,"yAxis":0},"text":"Average: 92.7<br/>Median: 94<br/>Minimum: 60<br/>Maximum: 100","shape":"rect"}]}]},"theme":{"colors":["#F92672","#66D9EF","#A6E22E","#A6E22E"],"chart":{"backgroundColor":"#272822","style":{"fontFamily":"Inconsolata","color":"#A2A39C"}},"title":{"style":{"color":"#A2A39C"},"align":"left"},"subtitle":{"style":{"color":"#A2A39C"},"align":"left"},"legend":{"align":"right","verticalAlign":"bottom","itemStyle":{"fontWeight":"normal","color":"#A2A39C"}},"xAxis":{"gridLineDashStyle":"Dot","gridLineWidth":1,"gridLineColor":"#A2A39C","lineColor":"#A2A39C","minorGridLineColor":"#A2A39C","tickColor":"#A2A39C","tickWidth":1},"yAxis":{"gridLineDashStyle":"Dot","gridLineColor":"#A2A39C","lineColor":"#A2A39C","minorGridLineColor":"#A2A39C","tickColor":"#A2A39C","tickWidth":1}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadCSV":"Download CSV","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","downloadXLS":"Download XLS","drillUpText":"◁ Back to {series.name}","exitFullscreen":"Exit from full screen","exportData":{"annotationHeader":"Annotations","categoryDatetimeHeader":"DateTime","categoryHeader":"Category"},"hideData":"Hide data table","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbolMagnitude":1000,"numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"shortWeekdays":["Sat","Sun","Mon","Tue","Wed","Thu","Fri"],"thousandsSep":" ","viewData":"View data table","viewFullscreen":"View in full screen","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":"Inconsolata","debug":false},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

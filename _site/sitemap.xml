@@ -2,11 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
     <loc>https://dataviz.school/about.html</loc>
-    <lastmod>2020-10-31T20:44:05-05:00</lastmod>
+    <lastmod>2020-11-01T07:14:05+05:30</lastmod>
   </url>
   <url>
     <loc>https://dataviz.school/</loc>
-    <lastmod>2020-10-31T19:45:18-05:00</lastmod>
+    <lastmod>2020-11-01T06:15:18+05:30</lastmod>
+  </url>
+  <url>
+    <loc>https://dataviz.school/posts/2023-03-05-mkt-3013-score-distribution/</loc>
+    <lastmod>2023-03-05T11:02:19+05:30</lastmod>
   </url>
   <url>
     <loc>https://dataviz.school/posts/installing-r-and-rstudio/</loc>

@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2023-03-05-mkt-3013-score-distribution/",
+    "title": "Exam 2 Score Distribution for MKT 3013",
+    "description": {},
+    "author": [
+      {
+        "name": "Ashwin Malshe",
+        "url": "https://ashwinmalshe.com"
+      }
+    ],
+    "date": "2023-03-05",
+    "categories": [],
+    "contents": "\n\n\n\n\n\n\n\n\n\n\n\n\n",
+    "preview": {},
+    "last_modified": "2023-03-05T11:02:19+05:30",
+    "input_file": "mkt-3013-score-distribution.knit.md"
+  },
+  {
     "path": "posts/installing-r-and-rstudio/",
     "title": "Installing R and RStudio",
     "description": "This is an old post about installing R and RStudio. It still works.",
