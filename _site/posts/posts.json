@@ -1,5 +1,24 @@
 [
   {
+    "path": "posts/2023-08-25-workaround-to-link-rstudio-and-github/",
+    "title": "Workaround to Linking RStudio and Github",
+    "description": "Many students face difficulties in linking RStudio and Github. This post shows a workaround using Github Desktop application.",
+    "author": [
+      {
+        "name": "Ashwin Malshe",
+        "url": {}
+      }
+    ],
+    "date": "2023-08-25",
+    "categories": [],
+    "contents": "\nFor this to work, you must have installed R and RStudio on your computer. Furthermore, you must have a Github.com account. I assume that you already created a repository on Github.com. All the screenshots in this post are taken on a laptop running Windows 10.\nStep 1\nDownload Github Desktop from https://desktop.github.com\n\n\nknitr::include_graphics(here::here(\"Images\", \"github desktop\" ,\"Download Github desktop.png\"))\n\n\n\nStep 2\nLaunch Github Desktop and login using your Github credentials.\n\n\nknitr::include_graphics(here::here(\"Images\", \"github desktop\" ,\"Log in to Github desktop.png\"))\n\n\n\nStep 4\nAuthorize Github Desktop from Github.com opened in your browser.\n\n\nknitr::include_graphics(here::here(\"Images\", \"github desktop\" ,\"Authorize the application.png\"))\n\n\n\nStep 5\nGo back to Github Desktop. You will see the following welcome screen. Select the second option.\n\n\nknitr::include_graphics(here::here(\"Images\", \"github desktop\" ,\"Welcome screen on Github desktop.png\"))\n\n\n\nStep 6\nSelect the repo to clone. Also set the path where this repo will be cloned on your computer. I suggest creating a folder structure such as “MSDA/Fall 2023/Data Visualization” and then point Github Desktop to this directly. This way, the DA6233-2023 folder will get added to this directory.\n\n\nknitr::include_graphics(here::here(\"Images\", \"github desktop\" ,\"Select the repo to clone.png\"))\n\n\n\nAfter successful repo cloning you should see a similar windows:\n\n\nknitr::include_graphics(here::here(\"Images\", \"github desktop\" ,\"After the repo is cloned.png\"))\n\n\n\nStep 7\nFinally, open RStudio and create a new project from File > New Project. Select the second option labeled “Existing Directory”. This is because we will use the same directory that we pointed Github Desktop to in Step 6.\n\n\nknitr::include_graphics(here::here(\"Images\", \"github desktop\" ,\"Create a new project.png\"))\n\n\n\nProvide the full link to the project directory and click “Create Project.” That’s it!\n\n\nknitr::include_graphics(here::here(\"Images\", \"github desktop\" ,\"Navigate to the existing directory.png\"))\n\n\n\n\n\n\n",
+    "preview": "posts/2023-08-25-workaround-to-link-rstudio-and-github/distill-preview.png",
+    "last_modified": "2023-08-25T20:42:29-05:00",
+    "input_file": "workaround-to-link-rstudio-and-github.knit.md",
+    "preview_width": 1425,
+    "preview_height": 972
+  },
+  {
     "path": "posts/2023-03-05-mkt-3013-score-distribution/",
     "title": "Exam 2 Score Distribution for MKT 3013",
     "description": {},
