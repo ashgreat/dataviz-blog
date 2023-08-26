@@ -12,6 +12,11 @@ output:
     self_contained: true
 ---
 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
 For this to work, you must have installed R and RStudio on your computer. Furthermore, you must have a Github.com account. I assume that you already created a repository on Github.com. All the screenshots in this post are taken on a laptop running Windows 10.
 
 ## Step 1
