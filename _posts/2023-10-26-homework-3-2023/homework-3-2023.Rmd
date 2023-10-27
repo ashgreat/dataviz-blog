@@ -5,8 +5,8 @@ author:
     affiliation: UTSA
 date: "`r Sys.Date()`"
 output:
-    html_notebook:
-      theme: cosmo
+  distill::distill_article:
+    self_contained: true
 ---
 
 ```{r setup, include=FALSE}

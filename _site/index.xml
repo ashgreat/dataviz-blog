@@ -12,14 +12,31 @@
       <link>https://dataviz.school</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 04 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Homework 3 - 2023</title>
+      <dc:creator>Ashwin Malshe</dc:creator>
+      <link>https://dataviz.school/posts/2023-10-26-homework-3-2023</link>
+      <description>Homework 3 - 2023</description>
+      <guid>https://dataviz.school/posts/2023-10-26-homework-3-2023</guid>
+      <pubDate>Thu, 26 Oct 2023 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Workaround to Linking RStudio and Github</title>
+      <dc:creator>Ashwin Malshe</dc:creator>
+      <link>https://dataviz.school/posts/2023-08-25-workaround-to-link-rstudio-and-github</link>
+      <description>Many students face difficulties in linking RStudio and Github. This post shows a workaround using Github Desktop application.</description>
+      <guid>https://dataviz.school/posts/2023-08-25-workaround-to-link-rstudio-and-github</guid>
+      <pubDate>Fri, 25 Aug 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://dataviz.school/posts/2023-08-25-workaround-to-link-rstudio-and-github/distill-preview.png" medium="image" type="image/png" width="1425" height="972"/>
+    </item>
     <item>
       <title>Exam 2 Score Distribution for MKT 3013</title>
       <dc:creator>Ashwin Malshe</dc:creator>
       <link>https://dataviz.school/posts/2023-03-05-mkt-3013-score-distribution</link>
       <description>Exam 2 Score Distribution for MKT 3013</description>
       <guid>https://dataviz.school/posts/2023-03-05-mkt-3013-score-distribution</guid>
-      <pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Installing R and RStudio</title>
