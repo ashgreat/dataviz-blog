@@ -13,7 +13,20 @@
       "title": "R Data Visualization",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-08-18T16:52:02-05:00"
+      "last_modified": "2023-03-04T23:32:19-06:00"
+    },
+    {
+      "path": "temp.html",
+      "title": "Untitled",
+      "author": [
+        {
+          "name": "Ashwin Malshe",
+          "url": "https://example.com/norajones"
+        }
+      ],
+      "date": "`r Sys.Date()`",
+      "contents": "\nBefore you begin, note that, in the header, the output format of this\ndocument is html_notebook. When you save this file, it\nautomatically creates another file with the same file name but with\n.nb.html extension in the same directory. This is the file\nyou will submit as your homework solution along with the\n.Rmd file.\n Warnings:\nDon’t delete the nb.html file.\nDon’t knit your .Rmd file to\nhtml. If you want to look at the output, just open the\nnb.html in the browser. Alternatively, click on the\n“Preview” button on top of the document:\n\nIf you delete nb.html file, you may have to create a new\n.Rmd file and restart from there. If you knit your\n.Rmd file to html, you will not be able to\nretain any of the interactivity in the plots. This means the TA will\nnot be able to grade you! \nThe objective of this homework is to give you more practice on\ninteractive visualizations using plotly and\nhighcharter.\nAs always, recreate these visualizations exactly. Q1 uses\nplotly while Q2-Q5 use highcharter.\nQ1 (3 points)\nUse mpg data set from ggplot2 to create a\nstatic visualization and then use ggplotly() to create a\nlimited interactive plot.\nHint: You will need to supply only\nframe. No ids used.\n\n\n\nFor the next four questions, you will use highcharter.\nQ2 (3 points)\nThis example creates a heatmap similar to the one shown\nhere.\nUse mpg data and hchart() function. We want\nto create a heatmap of average highway mileage for different\nclass and cyl. This plot removes all the\nobservations with five cylinders or with 2seater class.\nAlso note that I am treating cyl as a character (string)\nvariable. This is essential for creating this plot.\nI am using hc_theme_538(). Furthermore, the default\ncolor in the heamap is blue, which I changed using\nhc_colorAxis() function that I used in the Week 10\nheatmap.\n\n\n\nQ3 (3 points)\nIn the above plot, the tooltip shows confusing information. Below, I\nmodified the tooltip to present more information. The code is not at all\ncomplicated and relies on the tooltip code we used in Week 10.\nNext, I removed the X axis title and modified Y axis title.\nFinally, I added a title to the plot. Note how I used four different\nemojies related to cars. It doesn’t matter which car emojis you use as\nlong as they are related to automobiles.\n\n\n\nQ4 (3 points)\nFor this example, use a randomly selected subset of\ndiamonds data set from ggplot2:\n\n\nset.seed(2020)\nd1 = diamonds[sample(nrow(diamonds), 1000),]\n\n\nNext use d1 to create the following plot.\nI have used hc_theme_flat() for this plot.\nPlease use this theme for your plot too! You can add a\ntheme to the plot using hc_add_theme() function. Wherever\nthe word diamond appeared in the plot, I replaced it with the diamond\nemoji.\nPoint colors in this graph are mapped to clarity. Check\nout all the variables in this data set by typing ?diamonds\nin the console.\n\n\n\nQ5 (3 points)\nRecreate the plot in Q2 using hchart(). I used\nhc_theme_economist(). You can use any theme you want. You\ncan check out the themes here. I\nused economics dataset from ggplot2. Learn\nmore about the variables in the dataset by typing\n?economics in the console.\n\n\n\nBonus plot (Not graded)\nThis is the same plot as above except if you hover mouse pointer over\nthe peak of unemployment, the tooltip will show more information. Once\nagain, this is a simple trick and doesn’t require any advanced\ncoding.\n\n\n\n\n\n\n\n\n\n",
+      "last_modified": "2023-10-26T23:08:27-05:00"
     }
   ],
   "collections": ["posts/posts.json"]
