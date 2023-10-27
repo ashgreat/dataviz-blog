@@ -144,7 +144,9 @@ d1 %>%
 
 ## Q5 (3 points)
 
-Recreate the plot in Q2 using `hchart()`. I used `hc_theme_economist()`. You can use any theme you want. You can check out the themes [here](https://jkunst.com/highcharter/articles/themes.html). I used `economics` dataset from `ggplot2`. Learn more about the variables in the dataset by typing `?economics` in the console.
+Using `economics` dataset from `ggplot2`, recreate the following line graph. Learn more about the variables in the dataset by typing `?economics` in the console. Here, the Y acis is plotting unemployment. 
+
+I used `hc_theme_economist()`. You can use any theme you want. You can check out the themes [here](https://jkunst.com/highcharter/articles/themes.html). 
 
 ```{r fig.width=9, fig.height=6}
 hchart(economics,"line", hcaes(x = date, y = unemploy), name = "Unemployment")  %>% 
